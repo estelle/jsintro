@@ -86,10 +86,27 @@
      <pre contenteditable>if(nincompoops.length == 1)</pre>
      </section>
  </div> 
+ 
+ 
+ <div class="slide normal"> 
+     <header><h1>Comparing Case Insensitive Strings</h1></header> 
+     <section class="content"> 
+     <pre contenteditable>var firstName = prompt('First Name?');
+if(firstName.toUpperCase() === 'ESTELLE') {
+   alert(firstName);
+}</pre>
+<pre contenteditable>var errMsg,
+    email1 = prompt('Your email address:');
+    email2 = prompt('Re-enter email address:');
 
+if (email1.toUpperCase() != email2.toUpperCase()) {
+	errMsg += "Email addresses do not match\n";
+ }</pre>
+     </section>
+ </div> 
 
  <div class="slide normal"> 
-     <header><h1>Otherwise ...</h1></header> 
+     <header><h1>Otherwise ...</h1><h2>if ... else if .... else</header> 
      <section class="content"> 
      <pre contenteditable>var msg,
     age = <strong>+</strong>prompt("how old are you");
@@ -116,7 +133,6 @@
     // do these things
     // alter the condition       
 }</pre>
-<p>Example</p>
 <pre contenteditable>var counter = 0, iterations = 4;
 while (counter < iterations) {
     // do these things
@@ -132,11 +148,12 @@ for(var counter=0; counter < iterations; counter++) {
  </div> 
 
 <div class="slide normal"> 
-<header><h1>Exercise</h1></header> 
+<header><h1>Exercises</h1></header> 
 <section class="content">
 <ul>   
-	
-    </ul>
+<li>Is your user old enough to vote? Drink? Rent a car? Run for president? Retire?</li>
+<li>Multiplication Table: pick a number? How many multiplication values do you want? <br>Example input: 9, 3. <br>Example output: 9 x 1 = 9, 9 x 2 = 18, 9 x 3 = 27</li><li>If you used the while loop for the above, do it with the for loop. If you used the for loop, rewrite it as a while loop.</li>
+</ul>
 
 </section>
 </div> 
@@ -145,13 +162,13 @@ for(var counter=0; counter < iterations; counter++) {
 <div class="slide intro"> 
 <header><h1>Next</h1></header> 
 <section class="content">
-<a href="part_04S.html">Go</a> 
+<a href="part_04.html">Go</a> 
 </section>
 </div>
 </div>
    
  
-   <iframe src="../jsconsole/index.html" id="console" frameborder="0"></iframe>
+   <iframe src="console/index.html" id="console" frameborder="0"></iframe>
    
   </div>
   

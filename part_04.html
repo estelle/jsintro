@@ -29,6 +29,7 @@
 <header><hgroup> 
 <h1>Basic JavaScript: IV</h1> 
 <h2>Estelle Weyl</h2>
+<h3>Functions / Methods</h3>
 </hgroup></header>
 </div> 
 
@@ -47,7 +48,7 @@ var colours = colors.replace(/grey/gi, "gray");</pre><small>g = global, i = case
 </div> 
  
 <div class="slide normal"> 
-<header><h1>Case Chang</h1></header> 
+<header><h1>Case Change</h1></header> 
 <section class="content"> 
 <p>UPPERCASE/lowercase</p>
 <pre contenteditable>var speak = prompt('Write Something:');
@@ -78,26 +79,49 @@ array.splice();</pre>
   
  
 <div class="slide normal"> 
-<header><h1 style="display:inline-block; padding-right:1em;">Functions</h1><h2 style="display:inline-block;">reusable code that does something!</h2></header> 
+<header>
+<h1>Functions</h1>
+<h2>reusable code that does something!</h2>
+</header> 
 <section class="content"> 
 <pre contenteditable>function functionName(param1, param2) {
     // javascript you want to run
 }</pre>
 
 <pre>alertName('Estelle', 'Weyl');
+
 function alertName(first, last) {
-	var fullName = first + " " + last;
+    var fullName = first + " " + last;
     alert("Your name is " + fullName);
 }
-</pre>
-<pre>var val1, val2, total;
+</pre></section>
+</div> 
+  
+ 
+<div class="slide normal"> 
+<header>
+<h1>Functions</h1>
+<h2>reusable code that does something!</h2>
+</header> 
+<section class="content"> 
+<pre contenteditable>//declare variables
+var val1, val2, total;
 val1 = prompt('Enter a number'); 
 val2 = prompt('Another number');
-value = multiplier(val1, val2);
-function multiplier(num1, num2){
-	return num1 * num2;
+
+//call function and assign the return
+total = <strong>multiplier(</strong>val1, val2<strong>)</strong>;
+
+// the function
+<strong>function multiplier(</strong>num1, num2<strong>)</strong>{
+    var value =  num1 * num2;
+    console.log(num1 + " X " + num2 + " = " + value);
+    <strong>return</strong> value;
 }
-console.log(val1 + " X " + val2 + " = " + value);
+
+// local v global scope?
+//console.log(num1 + " X " + num2 + " = " + value);
+  console.log(val1 + " X " + val2 + " = " + total);
 </section>
 </div> 
  
@@ -126,7 +150,17 @@ answers.annoy();</pre>
 <header><h1>Exercises</h1></header> 
 <section class="content">
 <ul>   
-<li></li>
+<li>Define a function that writes your name to the console.</li>
+<li>Call that function</li>
+<li>Change your function so it accepts a name as a parameter</li>
+<li>Call that function</li>
+</ul>
+<p>Putting it all together</p>
+<ul>
+<li>Define a function that takes a first name and last name and write the initials to the console.</li>
+<li>Create another function that asks the user for their first and last names.</li>
+<li>Make the second function call the first function, passing the names.</li>
+<li>Make it run by calling the 2nd function</li>
 </ul>
 
 </section>

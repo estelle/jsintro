@@ -1,0 +1,443 @@
+<!doctype HTML>
+<html> 
+  <head> 
+    <meta charset="utf-8" />
+    <title>Intro to JavaScript: Part 1</title>
+    <link href="http://fonts.googleapis.com/css?family=Droid+Sans|Droid+Sans+Mono|Tangerine" rel="stylesheet" type="text/css" />
+<link href="css.css" rel="stylesheet"/>
+    
+  </head> 
+  <body> 
+  
+  <div id="topinfo">
+  </div>
+  
+  <div id="info">
+    <p>Press <span class="key">&rarr;</span> key to advance.
+    Zoom in/out: <span class="key">Ctrl or Command</span> + <span class="key">+/-</span>.
+    </p>
+  </div>
+  
+  <div id="presentation">
+  
+   <div id="presentation-counter"></div>
+      
+   <div id="slides">
+   
+    
+    <div class="slide intro">
+     <header><hgroup> 
+      <h1>Basic JavaScript</h1> 
+      <h2>Estelle Weyl</h2>
+     </hgroup></header>
+    </div> 
+    
+    
+   <div class="slide normal"> 
+     <header><h1>Javascript in HTML</h1></header> 
+     <section class="content"> 
+     <pre contenteditable>&lt;!doctype html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;This is a document&lt;/title&gt;
+        <span class="imp">&lt;script href=&quot;js/script.js&quot;&gt;&lt;/script&gt;</span>
+        <span class="imp">&lt;script&gt;</span>
+        	/* code goes here */
+        <span class="imp">&lt;/script&gt;</span>
+    &lt;/head&gt;
+    &lt;body onload=&quot;badPlaceToPutJSButAllowed();&quot;&gt;
+        <span class="imp">&lt;script&gt;</span>
+       	 // also allowed here
+        <span class="imp">&lt;/script&gt;</span>
+        <span class="imp">&lt;script href=&quot;js/script2.js&quot;&gt;&lt;/script&gt;</span>
+    &lt;/body&gt;
+&lt;/html&gt;
+     </pre>
+     </section>
+ </div> 
+   
+    
+  <div class="slide normal"> 
+     <header><h1>Sytnax</h1></header> 
+     <section class="content"> 
+     <p>Statments</p>
+     <pre contenteditable>
+     alert('this is an alert');
+     var addition = 14 * 7;
+     </pre>
+     <p>Comments
+     <pre contenteditable>
+     // this is a single line comment
+     
+     /* 
+        this is a multi-
+        line comment
+     */</pre>
+     </section>
+ </div>    
+    
+    <div class="slide normal"> 
+     <header><h1>Types of Data</h1></header> 
+     <section class="content"> 
+     <ul>
+     	<li>Numbers </li>
+        <li>Strings</li>
+        <li>Booleans</li>
+        <li>Objects</li>
+     </ul>
+    
+     <pre contenteditable>     'Estelle'
+     "Estelle"
+     "It's JavaScript"
+     'It\'s JavaScript'
+     true
+     27
+     3.1415
+     window</pre>
+     <p>Everything in JavaScript is an Object!</p>
+     </section>
+    </div>
+    
+   
+    
+    
+    
+    <div class="slide normal"> 
+     <header><h1>Declaring Strings</h1></header> 
+     <section class="content"> 
+     <pre contenteditable>'Estelle'
+"Estelle"
+'It\'s JavaScript'
+'\'\\\' is called a \'back slash\''</pre>
+          <pre contenteditable>var goodString = "Really long strings" + 
+  " can be concatenated across lines";
+
+var goodString = "This is\
+ another way of creating\
+ a multi-line string"
+
+var badString = &quot;This will
+ fail&quot;        
+          </pre>
+     </section>
+    </div>
+    
+    
+     <div class="slide normal"> 
+     <header><h1>Variables</h1></header> 
+     <section class="content"> 
+     <pre contenteditable>
+// 2 steps: Name and declare the variable
+var firstName;
+firstName = "Estelle";
+
+// Name and declare in one step
+var firstName = "Estelle";
+     </pre>
+     <ul>
+     	<li>begin with letters, numbers, $ or _</li>
+     	<li>only contain  letters, numbers, $ and _</li>
+     	<li>case sensitive</li>
+     	<li>Avoid reserved words &rarr;</li>
+     	<li>Choose clarity and meaning</li>
+     	<li>pick a naming convention and stick with it</li>
+     </ul>
+     </section>
+ </div> 
+
+
+    
+    
+     <div class="slide normal"> 
+     <section class="content" style="-webkit-column-count:4">
+     <ul>
+  <li>break</li>
+  <li>case</li>
+  <li>catch</li>
+  <li>continue</li>
+  <li>debugger</li>
+  <li>default</li>
+  <li>delete</li>
+  <li>do</li>
+  <li>else</li>
+  <li>finally</li>
+  <li>for</li>
+  <li>function</li>
+  <li>if</li>
+  <li>in</li>
+  <li>instanceof</li>
+  <li>new</li>
+  <li>return</li>
+  <li>switch</li>
+  <li>this</li>
+  <li>throw</li>
+  <li>try</li>
+  <li>typeof</li>
+  <li>var</li>
+  <li>void</li>
+  <li>while</li>
+  <li style="border-bottom:1px solid">with</li>
+
+       <li>class</li>
+       <li>enum</li>
+       <li>export</li>
+       <li>extends</li>
+       <li>import</li>
+       <li>super</li>
+       <li>implements</li>
+       <li>interface</li>
+       <li>let</li>
+       <li>package</li>
+       <li>private</li>
+       <li>protected</li>
+       <li>public</li>
+       <li>static</li>
+       <li style="border-bottom:1px solid">yield</li>
+       <li>abstract</li>
+       <li>boolean</li>
+       <li>byte</li>
+       <li>char</li>
+       <li>const</li>
+       <li>double</li>
+       <li>final</li>
+       <li>float</li>
+       <li>goto</li>
+       <li>import</li>
+       <li>int</li>
+       <li>long</li>
+       <li>native</li>
+       <li>short</li>
+       <li>synchronized</li>
+       <li>throws</li>
+       <li>transient</li>
+       <li style="border-bottom:1px solid">volatile</li>
+   
+     <li>true</li>
+     <li>false</li>
+     <li>null</li>
+     <li>undefined</li>
+     </ul>
+     </section>
+ </div>   
+    
+    
+ <div class="slide normal"> 
+     <header><h1>Reserved for Browser</h1></header> 
+     <section class="content" style="-webkit-column-count: 2"> 
+     <ul>
+       <li>alert</li>
+       <li>blur</li>
+       <li>closed</li>
+       <li>document</li>
+       <li>focus</li>
+       <li>frames</li>
+       <li>history</li>
+       <li>innerHeight</li>
+       <li>innerWidth</li>
+       <li>length</li>
+       <li>location</li>
+       <li>navigator</li>
+       <li>open</li>
+       <li>outerHeight</li>
+       <li>outerWidth</li>
+       <li>parent</li>
+       <li>screen</li>
+       <li>screenX</li>
+       <li>screenY</li>
+       <li>statusbar</li>
+       <li>window</li>
+     </ul>
+     </section>
+ </div> 
+ 
+      
+ <div class="slide normal"> 
+     <header><h1>Declaring Variables</h1></header> 
+     <section class="content"> 
+     <pre contenteditable>
+var firstName, lastName, age, isAwesome;
+    firstName = "Estelle";
+    lastName = 'Weyl';
+    age = 29;
+    isAwesome = true;</pre>
+     <pre contenteditable>
+var firstName = "Estelle";
+var lastName = 'Weyl';
+var age = 29;
+var isAwesome = true;</pre>
+     <pre contenteditable>
+var firstName = "Estelle",
+    lastName = 'Weyl',
+    age = 29,
+    isAwesome = true; </pre>
+      <pre contenteditable>var firstName="Estelle",lastName='Weyl',age=29,isAwesome=true;</pre>
+     </section>
+ </div> 
+
+      
+      
+        
+    <div class="slide normal advanced"> 
+     <header><h1>Loosely typed language</h1></header> 
+     <section class="content"> 
+     <pre contenteditable>var anyValue = 'red ribbon'; // string
+    anyValue = 24; // number   
+    anyValue = true; // boolean
+    anyValue = [3, 'red ribbon', true, 24]; //array</pre>
+     </section>
+ </div> 
+    
+ 
+ <div class="slide intro"> 
+     <header><h1 style="text-decoration:line-through; ">Global Scope</h1></header> 
+     <section class="content"> 
+     </section>
+ </div>
+
+ <div class="slide normal advanced"> 
+     <header><h1>Object Notation</h1></header> 
+     <section class="content"> 
+     <pre contenteditable>
+ var person = {
+    firstName: "Estelle",
+    lastName: 'Weyl',
+    age: 29,
+    isAwesome: true
+ }; </pre>
+     
+      <pre contenteditable>
+ var person;
+    person['firstName'] = "Estelle",
+    person['lastName'] = 'Weyl',
+    person['age'] = 29,
+    person['isAwesome'] = true; </pre>
+     
+     
+      <pre contenteditable>	
+ var person;
+    person.firstName =  "Estelle",
+    person.lastName =  'Weyl',
+    person.age = 29,
+    person.isAwesome = true;</pre>
+     </section>
+ </div> 
+
+ 
+   
+        
+    <div class="slide normal"> 
+     <header><h1>Basic Math</h1></header> 
+     <section class="content">
+     <p>Operators</p>
+     <ul><li>+</li>
+       <li>-</li>
+       <li>*</li>
+       <li>/</li>
+       <li>%</li>
+     </ul> 
+<pre contenteditable>var cost = 2.5;
+var quantity = 10;
+var total = cost * quantity;</pre>
+<ul><li>Order of operations is same as math. Use parentheses</li>
+<li>modulo &rarr; remainder</li>
+</ul>
+     </section>
+ </div> 
+   
+ <div class="slide normal"> 
+     <header><h1>Concatenation</h1></header> 
+     <section class="content"> 
+     <pre contenteditable>var firstName = "Estelle";
+var lastName = "Weyl";
+var fullName = firstName + " " + lastName;</pre>
+<p>Joining Numbers and String</p>
+<pre contenteditable>var sentence = firstName + " is not really " + age + " years old";</pre>
+<pre>var notMath = '2' + 4 // 24
+var yupMath = <span class="imp">+</span>'2' + 4; // 6
+var yupMath = <span class="imp">Number(</span>'2'<span class="imp">)</span> + 4; // 6
+var notMath = Number('2foo') + 4 // <span class="imp">NaN</span>
+var yupMath = <span class="imp">parseInt(</span>'2foo'<span class="imp">)</span> + 4; // 6</pre>
+     </section>
+ </div>   
+  
+  <div class="slide normal"> 
+     <header><h1>Operator Sortcuts</h1></header> 
+     <section class="content"><ul style="float:left; margin-right:40px;"><li>+=</li>
+       <li>-=</li>
+       <li>*=</li>
+       <li>/=</li>
+       <li>++</li>
+       <li>--</li>
+     </ul>  
+     <pre contenteditable style="float:left;">var increment += 1;
+  ++increment;
+    increment++;
+var decrement -= 1;
+  --decrement;
+    decrement--;
+
+    errorMessage += " " + newError;</pre>
+    <pre contenteditable style="clear: both">var iteration = 0;
+console.log('value of iteration is: ' + iteration++);
+console.log('value of iteration is: ' + ++iteration);
+</pre>
+     </section>
+ </div>  
+  
+  
+  <div class="slide normal"> 
+     <header><h1>MadLibs with Window Methods</h1></header> 
+     <section class="content"> 
+     <pre contenteditable>var color = window.prompt('Your favorite color');
+var tool = window.prompt('What do you draw with?');
+var count = window.prompt('Favorite Number?');
+window.alert(count + ' ' + color + ' ' + tool + 's');</pre>
+
+<pre contenteditable>var answers = {
+  color: window.prompt('Favorite Color'),
+  tool: window.prompt('Analog Printer?'),
+  count: window.prompt('Favorite Number?'),
+  message: answers.count + ' ' + answers.color + ' ' + answers.tool + 's',
+  annoy: function(){ 
+      alert('You told us: ' + answers.message);
+    }
+};
+alert(answers.message);
+answers.annoy();</pre>
+     </section>
+ </div>  
+  
+   <div class="slide intor"> 
+     <header><h1>Exercise</h1></header> 
+     <section class="content">
+     <p>Get the answers to these math problems:</p>
+     	<ul>
+        	<li>27 * 6 - 18</li>
+            <li>The value of 28 ÷ 2</li>
+            <li>the remainder of 29 ÷ 3</li>
+       </ul>
+     <p>Get the browser to alert your name</p>
+     <p>Get the browser to approximate your age with current year and birth year</p> 
+     </section>
+ </div>
+ 
+ <div class="slide intro"> 
+     <header><h1>Next</h1></header> 
+     <section class="content">
+     <a href="part_02.html">Go</a> 
+     </section>
+ </div>
+   </div>
+   
+ 
+   <iframe src="console/index.html" id="console" frameborder="0"></iframe>
+   
+  </div>
+  
+  <script src="slides.js"></script>
+  <!--[if lt IE 9]>
+  <script 
+  src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+  <script>CFInstall.check({ mode: "overlay" });</script>
+  <![endif]--> 
+  </body> </html>

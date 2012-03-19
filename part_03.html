@@ -1,0 +1,233 @@
+<!doctype HTML>
+<html> 
+  <head> 
+    <meta charset="utf-8" />
+    <title>Intro to JavaScript: Part 3</title>
+    <link href="http://fonts.googleapis.com/css?family=Droid+Sans|Droid+Sans+Mono|Tangerine" rel="stylesheet" type="text/css" />
+<link href="css.css" rel="stylesheet"/>
+    
+  </head> 
+  <body> 
+  
+  <div id="topinfo">
+  </div>
+  
+  <div id="info">
+    <p>Press <span class="key">&rarr;</span> key to advance.
+    Zoom in/out: <span class="key">Ctrl or Command</span> + <span class="key">+/-</span>.
+    </p>
+  </div>
+  
+  <div id="presentation">
+  
+   <div id="presentation-counter"></div>
+      
+   <div id="slides">
+   
+    
+<div class="slide intro">
+<header><hgroup> 
+<h1>Basic JavaScript</h1> 
+<h2>Estelle Weyl</h2>
+</hgroup></header>
+</div> 
+
+ <div class="slide normal"> 
+     <header><h1>Conditional Statements</h1><h2>if/then</h2></header> 
+     <section class="content"> 
+     <pre contenteditable>if (condition is true) {
+     
+     // then do this ....
+     
+}</pre>
+<pre contenteditable>if(2 + 2 == 4) {
+	console.log("You are a mathmatician!");
+}
+</pre>
+<pre contenteditable>if(prompt("Your name?") != "Estelle"){
+
+    console.log("You are an imposter!");
+
+}</pre>
+     </section>
+ </div>  
+ 
+ 
+ <div class="slide normal"> 
+     <header><h1>Comparison Operator</h1></header> 
+     <section class="content"> 
+     <table cellspacing="0" cellpadding="5" style="border-collapse:collapse">
+     	<thead><tr><th>Operator</th><th>Definition</th></tr></thead>
+        <tbody>
+        <tr><td>==</td><td>Equal to</td></tr>
+        <tr><td>===</td><td>Equal to &amp; same type</td></tr>
+        <tr><td>!=</td><td>Not Equal to</td></tr>
+        <tr><td>&gt;</td><td>Greater than</td></tr>
+        <tr><td>&gt;=</td><td>Greater or equal to</td></tr>
+        <tr><td>&lt;</td><td>Less than</td></tr>
+        <tr><td>&lt;=</td><td>Less or equal to</td></tr>
+        <tr><td>!</td><td>Not</td></tr>
+        <tr><td>&amp;&amp;</td><td>AND</td></tr>
+        <tr><td>||</td><td>OR</td></tr>
+        </tbody>
+     </table>
+     
+     </section>
+ </div> 
+
+ <div class="slide normal"> 
+     <header><h1>Conditional Examples</h1></header> 
+     <section class="content"> 
+     <pre contenteditable>if( 5 > 4)</pre>
+     <pre contenteditable>if("Clinton" > "Bush")</pre>
+     <pre contenteditable>if(5 == '5')</pre>
+     <pre contenteditable>if(0 < x &amp;&amp; x < 10)</pre>
+     <pre contenteditable>if(!firstName)</pre>
+     <pre contenteditable>if(nincompoops.length == 1)</pre>
+     </section>
+ </div> 
+ 
+ 
+ <div class="slide normal"> 
+     <header><h1>Comparing Case Insensitive Strings</h1></header> 
+     <section class="content"> 
+     <pre contenteditable>var firstName = prompt('First Name?');
+if(firstName.toUpperCase() === 'ESTELLE') {
+   alert(firstName);
+}</pre>
+<pre contenteditable>var errMsg,
+    email1 = prompt('Your email address:');
+    email2 = prompt('Re-enter email address:');
+
+if (email1.toUpperCase() != email2.toUpperCase()) {
+	errMsg += "Email addresses do not match\n";
+ }</pre>
+     </section>
+ </div> 
+ 
+ 
+ 
+ <div class="slide normal"> 
+ <header><h1>Comparing Numbers</h1></header> 
+ <section class="content"> 
+ <pre contenteditable>var age = parseInt(prompt('Lie about your age?'));
+if(isNaN(age)) {
+  // not a number!! 
+  var banana = 'frog'
+} 
+
+</pre>
+<pre contenteditable>var errMsg,
+email1 = prompt('Your email address:');
+email2 = prompt('Re-enter email address:');
+
+if (email1.toUpperCase() != email2.toUpperCase()) {
+errMsg += "Email addresses do not match\n";
+}</pre>
+ </section>
+ </div> 
+
+ 
+ 
+ 
+ 
+ 
+
+ <div class="slide normal"> 
+     <header><h1>Otherwise ...</h1><h2>if ... else if .... else</h2></header> 
+     <section class="content"> 
+     <pre contenteditable>var msg,
+    age = <strong>+</strong>prompt("how old are you");
+    
+<strong>if</strong>(<strong>!age</strong> <strong>||</strong> <strong>isNaN(age)</strong>) {
+  msg = "You're too old to tell us your age?";
+} <strong>else if</strong> (age <strong><=</strong> 18 <strong>||</strong> age <strong>>=</strong> 65) {
+  msg = "Kudos to you for getting mad skillz";
+} <strong>else if</strong> (age > 45) {
+  msg = "You should have lied about your age.";
+} <strong>else if</strong> (age < 25) {
+  msg = "You're too young to rent a car,<strong>\</strong>
+  but old enough to rock JS";
+} <strong>else</strong> {
+  msg = "There's nothing wrong with being average.";
+}</pre>
+     </section>
+ </div> 
+ 
+  <div class="slide normal"> 
+     <header><h1>Loops</h1></header> 
+     <section class="content"> 
+     <pre contenteditable>while (condition is true) {
+    // do these things
+    // alter the condition       
+}</pre>
+<pre contenteditable>var counter = 0, iterations = 4;
+while (counter < iterations) {
+    // do these things
+    counter++;
+}
+</pre>
+<p>Declared in one line</p>
+<pre contenteditable>
+for(var counter=0; counter < iterations; counter++) {
+    // do these things
+}</pre>
+     </section>
+ </div> 
+ 
+<div class="slide normal"> 
+<header><h1>Iterate even if condition is never met</h1><h2>do while</h2></header> 
+<section class="content"> 
+<pre contenteditable>var count = 7;
+do {
+    console.log(count);
+    count++;
+} while (count < 5);
+</pre>
+<p>Will execute code block at least once, even if condition is never met.</p>
+</section>
+</div> 
+
+
+<div class="slide intro"> 
+     <header><h1>Don't forget to increment your counter or your browser will crash</h1><h2>infinite loop</h2></header> 
+     <section class="content"> 
+     </section>
+ </div>
+ 
+  
+
+
+<div class="slide normal"> 
+<header><h1>Exercises</h1></header> 
+<section class="content">
+<ul>   
+<li>Is your user old enough to vote? Drink? Rent a car? Run for president? Retire?</li>
+<li>Multiplication Table: pick a number? How many multiplication values do you want? <br>Example input: 9, 3. <br>Example output: 9 x 1 = 9, 9 x 2 = 18, 9 x 3 = 27</li><li>If you used the while loop for the above, do it with the for loop. If you used the for loop, rewrite it as a while loop.</li>
+<li>Have the user guess your number. Tell them they're warm if close or cold if far off</li>
+</ul>
+
+</section>
+</div> 
+
+
+<div class="slide intro"> 
+<header><h1>Next</h1></header> 
+<section class="content">
+<a href="part_04.html">Go</a> 
+</section>
+</div>
+</div>
+   
+ 
+   <iframe src="console/index.html" id="console" frameborder="0"></iframe>
+   
+  </div>
+  
+  <script src="slides.js"></script>
+  <!--[if lt IE 9]>
+  <script 
+  src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+  <script>CFInstall.check({ mode: "overlay" });</script>
+  <![endif]--> 
+  </body> </html>

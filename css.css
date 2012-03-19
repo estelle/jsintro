@@ -258,3 +258,4 @@ div:not(.current).reduced {
 
 .slide:nth-child(even) {}
 .slide:nth-child(odd) { background-color: #fff;}
+p + pre{margin-top: -1em; } pre+small {margin-top: -0.8em; display:block;  opacity:0.5; text-indent: 1em;}

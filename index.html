@@ -103,7 +103,7 @@
     
     
     <div class="slide normal"> 
-     <header><h1>Strings</h1></header> 
+     <header><h1>Declaring Strings</h1></header> 
      <section class="content"> 
      <pre contenteditable>'Estelle'
 "Estelle"
@@ -362,14 +362,14 @@ var yupMath = <span class="imp">parseInt(</span>'2foo'<span class="imp">)</span>
   
   <div class="slide normal"> 
      <header><h1>Operator Sortcuts</h1></header> 
-     <section class="content"><ul><li>+=</li>
+     <section class="content"><ul style="float:left; margin-right:40px;"><li>+=</li>
        <li>-=</li>
        <li>*=</li>
        <li>/=</li>
        <li>++</li>
        <li>--</li>
      </ul>  
-     <pre contenteditable>var increment += 1;
+     <pre contenteditable style="float:left;">var increment += 1;
   ++increment;
     increment++;
 var decrement -= 1;
@@ -377,13 +377,13 @@ var decrement -= 1;
     decrement--;
 
     errorMessage += " " + newError;</pre>
+    <pre contenteditable style="clear: both">var iteration = 0;
+console.log('value of iteration is: ' + iteration++);
+console.log('value of iteration is: ' + ++iteration);
+</pre>
      </section>
  </div>  
   
-  <script>
-  var math = 'frog';
-  '4'.parseInt();
-  </script>
   
   <div class="slide normal"> 
      <header><h1>MadLibs with Window Methods</h1></header> 

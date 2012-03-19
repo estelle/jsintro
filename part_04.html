@@ -41,21 +41,47 @@
 var abbr = word.substring(0,3);</pre><small>substring(startPos, endPos)</small>
 <p>Replace content</p>
 <pre contenteditable>var pinkFloyd = "Good bye cruel world";
-var terryJacks = pinkFloyd.replace('cruel world', 'to you my trusted friend');</pre><small>replace(origSub, newSub); first occurence</small>
+var terryJacks = pinkFloyd.<strong>replace</strong>('cruel world', 'to you my trusted friend');</pre><small>replace(origSub, newSub); first occurence</small>
 <pre contenteditable>var colors = "Grey, lightgrey, darkgrey, slateGrey";
-var colours = colors.replace(/grey/gi, "gray");</pre><small>g = global, i = case-insensitive</small>
+var colours = colors.<strong>replace</strong>(<strong>/</strong>grey<strong>/gi</strong>, "gray");</pre><small>g = global, i = case-insensitive</small>
 </section>
 </div> 
- 
+
+<div class="slide normal"> 
+<header><h1>String Methods (cont.)</h1></header> 
+<section class="content">
+<p>searching</p> 
+<pre contenteditable>var willS="To be or not to be, that is the question."
+var first = willS.<strong>indexOf</strong>('be'); // 3
+var last =  willS.<strong>lastIndexOf</strong>('be'); //16
+</pre>
+<small>returns index of first letter found, or -1</small>
+<p>Slice or section of text</p>
+<pre contenteditable>
+var section = willS.<strong>slice</strong>(9, 18); // "not to be"
+
+// returns "that is the question."
+var section = willS.<strong>slice</strong>(20); 
+var section = 
+   willS.<strong>slice</strong>(willS.<strong>lastIndexOf</strong>(',') + 2);</pre>
+<small>slice(start, end) where end is not included. <br>&nbsp; &nbsp; If end is ommitted, will return from firstChar on</small>
+</section>
+
+</div>  
+
 <div class="slide normal"> 
 <header><h1>Case Change</h1></header> 
 <section class="content"> 
 <p>UPPERCASE/lowercase</p>
 <pre contenteditable>var speak = prompt('Write Something:');
-var shout = speak.toUpperCase();
-var whisper = speak.toLowerCase();</pre>
+var shout = speak.<strong>toUpperCase</strong>();
+var whisper = speak.<strong>toLowerCase</strong>();</pre>
 </section>
 </div>
+
+ 
+  
+
   
 <div class="slide normal"> 
 <header><h1>Methods</h1><h2>We've already used these</h2></header> 
@@ -125,6 +151,42 @@ total = <strong>multiplier(</strong>val1, val2<strong>)</strong>;
 </section>
 </div> 
  
+ <div class="slide normal"> 
+<header><h1>Variable Scope</h1></header> 
+<section class="content">
+<p>Variables defined outside a function are global variables. They are accessible anywhere in your program once declared.</p>
+<p>Variables declared with var inside a function are local to that function</p>
+<p>Variables defined in a function without being locally declared are global. Arguments are always local whether implicit or explicit.</p>
+<pre contenteditable>function kiss(){
+  for(<strong>i = 0</strong>; i < <strong>arguments.length</strong>; i++){
+	console.log("I want to kiss " + <strong>arguments[i]</strong>)
+  }
+}
+kiss("Bill", "Barack", "Johnny", "Angelina");</pre>
+</section>
+</div> 
+ 
+  
+<div class="slide normal"> 
+<header><h1>Global Scope</h1></header> 
+<section class="content"> 
+<pre contenteditable>var vacationDays = 14;
+
+var holiday= function(vacationDays) {
+    var name = prompt('Name');
+    console.log(name + "'s trip lasted " + vacationDays + " days")
+}
+
+holiday(7);
+console.log(vacationDays);
+//console.log(name);</pre>
+</section>
+</div> 
+ 
+  
+
+ 
+ 
 <div class="slide normal advanced"> 
 <header><h1>Functions are methods</h1></header> 
 <section class="content"> 
@@ -144,7 +206,71 @@ window.functionName();</pre>
 };
 answers.annoy();</pre>
 </section>
-</div>   
+</div> 
+
+<div class="slide normal"> 
+<header><h1>Return Values</h1></header> 
+<section class="content">
+<p>"return" is used inside a function to send back the return value when a function is called.</p> 
+<pre contenteditable>var squared = function(x){
+	<strong>return x * x;</strong>
+}
+
+// the prompt method returns what was entered
+var num = +prompt('Enter a number');
+
+// the value written is the return value of function
+console.log(num + " squared is " + <strong>squared(num)</strong>);
+</pre>
+
+</section>
+</div> 
+ 
+  
+<div class="slide normal"> 
+<header><h1>Return rules</h1></header> 
+<section class="content">
+<p>Function with no return, return undefined</p> 
+<pre contenteditable>var squared = function(x){
+	<strong>console.log( x * x)</strong>
+}
+var num = +prompt('Enter a number');
+console.log(num + " squared is " + <strong>squared(num)</strong>);
+</pre></section>
+</div> 
+
+
+
+<div class="slide normal"> 
+<section class="content"> 
+<p>When a function hits a return, it exits the function and goes back to the callee</p>
+<pre contenteditable>var ageLimit = function(age) {
+  if(isNaN(age)) {
+      <strong>return</strong> "Ummmm.... hello!";           }
+  if(age >=65)   { 
+      <strong>return</strong> "You're old enough to retire";}
+  if(age > 30)   {
+      <strong>return</strong> "Aren't your 29 for the " + 
+              (age-28) + "th time";        }
+  if(age >= 25)  {
+      <strong>return</strong> "you can finally rent a car"; }
+  if(age < 18)   {
+      <strong>return</strong> "you're too young to vote!";  }
+  <strong>return</strong> "I'm speechless";
+}
+
+var message = ageLimit(+prompt("How old are you?"));
+</pre><small>could have also used else if</small>
+</section>
+</div> 
+ 
+  
+
+
+
+
+
+  
 
 <div class="slide normal"> 
 <header><h1>Exercises</h1></header> 
@@ -161,6 +287,7 @@ answers.annoy();</pre>
 <li>Create another function that asks the user for their first and last names.</li>
 <li>Make the second function call the first function, passing the names.</li>
 <li>Make it run by calling the 2nd function</li>
+<li>Extra: make it so the first function only takes 1 value and returns only 1 initial. Call it 2x.</li>
 </ul>
 
 </section>
@@ -181,9 +308,5 @@ answers.annoy();</pre>
   </div>
   
   <script src="slides.js"></script>
-  <!--[if lt IE 9]>
-  <script 
-  src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
-  <script>CFInstall.check({ mode: "overlay" });</script>
-  <![endif]--> 
+
   </body> </html>

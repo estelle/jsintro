@@ -24,7 +24,7 @@ body { overflow: auto; }
 #console span.gutter { float: left; display: block; width: 5px; }
 
 #output li div { position: relative; }
-#output .echo .permalink { position: absolute; right: 0; overflow: hidden; display: block; background: url(link.png) no-repeat center; height: 20px; width: 30px; text-indent: -200px; top: 0; opacity: 0.5; }
+#output .echo .permalink { position: absolute; right: 0; overflow: hidden; display: block; background: #eef; height: 20px; width: 30px; text-indent: -200px; top: 0; opacity: 0.5; display:none;}
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2) {
   -webkit-text-size-adjust: none; /* prevent webkit from resizing text to fit */

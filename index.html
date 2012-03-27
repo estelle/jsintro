@@ -34,7 +34,7 @@
     
     
    <div class="slide normal"> 
-     <header><h1>Javascript in HTML</h1></header> 
+     <header><h1>Including Javascript in your HTML</h1></header> 
      <section class="content"> 
      <pre contenteditable>&lt;!doctype html&gt;
 &lt;html&gt;
@@ -55,24 +55,37 @@
      </pre>
      </section>
  </div> 
-   
+   <div class="slide normal"> 
+     <header><h1>Exercise</h1></header> 
+     <section class="content"> 
+      <p>Try it!<br><a href="files/01_includejs.html">Basic HTML5 template</a></p>
+      <ul>
+      	<li>Add an external script in the head</li>
+      	<li>Add an embedded script in the head</li>
+      	<li>Add an external script in the body</li>
+      	<li>Add an embedded script in the head</li>
+      </ul>
+     </section>
+ </div>
     
   <div class="slide normal"> 
      <header><h1>Sytnax</h1></header> 
      <section class="content"> 
      <p>Statments</p>
-     <pre contenteditable>
-     alert('this is an alert');
-     var addition = 14 * 7;
+     <pre contenteditable>alert('this is an alert');
+var addition = 14 * 7;
+var functionName = function(){
+    alert('an alert');
+};
      </pre>
      <p>Comments
-     <pre contenteditable>
-     // this is a single line comment
+     <pre contenteditable>// this is a single line comment
      
-     /* 
-        this is a multi-
-        line comment
-     */</pre>
+/* 
+   this is a multi-
+   line comment
+*/</pre>
+ <p>Exercise: <a href="files/01_includejs.html">Add comments to the last file</a></p>
      </section>
  </div>    
     
@@ -119,6 +132,7 @@ var goodString = "This is\
 var badString = &quot;This will
  fail&quot;        
           </pre>
+<p>Exercise: Copy &amp; Paste above strings in console</p>
      </section>
     </div>
     
@@ -280,10 +294,14 @@ var firstName = "Estelle",
     <div class="slide normal advanced"> 
      <header><h1>Loosely typed language</h1></header> 
      <section class="content"> 
-     <pre contenteditable>var anyValue = 'red ribbon'; // string
-    anyValue = 24; // number   
-    anyValue = true; // boolean
-    anyValue = [3, 'red ribbon', true, 24]; //array</pre>
+     <pre contenteditable>var anyValue = 'red ribbon';		// string
+     
+     
+anyValue = 24; 				// number   
+
+anyValue = true; 			// boolean
+
+anyValue = [3, 'red ribbon', true, 24];	//array</pre>
      </section>
  </div> 
     
@@ -343,20 +361,68 @@ var total = cost * quantity;</pre>
 </ul>
      </section>
  </div> 
-   
+ 
+ 
+ <div class="slide normal"> 
+<header><h1>Addition &amp; Subtraction</h1></header> 
+<section class="content"> 
+<pre contenteditable style="font-size: larger">var easy = 2 + 2;
+var hard = 6298 + 3817;
+var sum = easy + hard;</pre>
+<pre contenteditable style="font-size:larger">var easy = 10 - 5;
+var hard = 6298 - 3817;
+var difference = hard - easy;</pre>
+</section>
+</div> 
+ 
+ <div class="slide normal"> 
+<header><h1>Multiplication &amp; Division</h1></header> 
+<section class="content"> 
+<pre contenteditable  style="font-size: larger">var easy = 5 * 5;
+var hard = 11 * 7;
+var product = easy * hard;</pre>
+
+<pre contenteditable  style="font-size: larger">var easy = 5 / 5;
+var hard = 51 / 17;
+var quotient = hard / easy;</pre>
+</section>
+</div> 
+ 
+<div class="slide normal"> 
+<header><h1>Modulus</h1></header> 
+<section class="content"> 
+<pre contenteditable  style="font-size: larger">var easy = 10 % 7;
+var hard = 41 % 7;
+var modulus = hard % easy;</pre>
+</section>
+<p style="font-size: larger">Exercise:</p>
+<ul style="font-size: larger">
+	<li>Guess the values are for the 3 slides?</li>
+    <li>Test the values in the console</li>
+    <li>Write a few equations and test in console</li>
+    </ul>
+    
+</div> 
+ 
+  
+  
+ 
+  
  <div class="slide normal"> 
      <header><h1>Concatenation</h1></header> 
      <section class="content"> 
      <pre contenteditable>var firstName = "Estelle";
 var lastName = "Weyl";
+var age = 29;
 var fullName = firstName + " " + lastName;</pre>
 <p>Joining Numbers and String</p>
 <pre contenteditable>var sentence = firstName + " is not really " + age + " years old";</pre>
-<pre>var notMath = '2' + 4 // 24
-var yupMath = <span class="imp">+</span>'2' + 4; // 6
-var yupMath = <span class="imp">Number(</span>'2'<span class="imp">)</span> + 4; // 6
-var notMath = Number('2foo') + 4 // <span class="imp">NaN</span>
-var yupMath = <span class="imp">parseInt(</span>'2foo'<span class="imp">)</span> + 4; // 6</pre>
+<pre>var notMath = '2' + 4;			// 24
+var yupMath = <span class="imp">+</span>'2' + 4; 		// 6
+var yupMath = <span class="imp">Number(</span>'2'<span class="imp">)</span> + 4; 		// 6
+var notMath = Number('2foo') + 4 	// <span class="imp">NaN</span>
+var yupMath = <span class="imp">parseInt(</span>'2foo'<span class="imp">)</span> + 4;	// 6</pre>
+<p>Exercise: Try the expressions above, and your own</p>
      </section>
  </div>   
   
@@ -397,12 +463,13 @@ window.alert(count + ' ' + color + ' ' + tool + 's');</pre>
   color: window.prompt('Favorite Color'),
   tool: window.prompt('Analog Printer?'),
   count: window.prompt('Favorite Number?'),
-  message: answers.count + ' ' + answers.color + ' ' + answers.tool + 's',
+  message: function(){
+	  return answers.count + ' ' + answers.color + ' ' + answers.tool + 's';
+  },
   annoy: function(){ 
-      alert('You told us: ' + answers.message);
-    }
+      alert('You told us: ' + answers.message());
+  }
 };
-alert(answers.message);
 answers.annoy();</pre>
      </section>
  </div>  

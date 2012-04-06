@@ -277,6 +277,29 @@ strong[0].<strong>innerHTML</strong> = 'emboldened content';
 </div> 
  
   
+<div class="slide normal"> 
+<header><h1>Add an element</h1></header> 
+<section class="content"> 
+<ol>
+	<li>Create an element</li>
+    <li>Set attributes on that element</li>
+    <li>Create your textnode</li>
+    <li>Add content to that element by appending the textnode to the element you created</li>
+    <li>Targe the DOM node this new element will be next to</li>
+    <li>Add that node next to the the targeted node</li>
+</ol>
+<pre contenteditable>
+var newLI = document.<strong>createElement</strong>('li');
+newLI.<strong>setAttribute</strong>('class', 'myClass');
+var textNode = document.<strong>createTextNode</strong>("some text");
+newLI.<strong>appendChild</strong>(textNode);
+var myUL = document.querySelector("#changeme ul");
+myUL.appendChild(newLI);
+</pre>
+</section>
+</div> 
+ 
+  
   
  
 

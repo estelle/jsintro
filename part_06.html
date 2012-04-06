@@ -42,18 +42,17 @@
 <div class="slide normal"> 
 <header><h1>Uses of JS in Websites</h1></header> 
 <section class="content"> 
-<ul>
-	<li>Interactive Effects</li>
-	<li>Dynamically modifying web pages</li>
-    <li>Changing the HTML the browser originally downloaded</li>
-    <li>
-        <p>Steps:</p>
-        <ul>
-            <li>identify an element on the page</li>
-            <li>do something to the element</li>
-        </ul>
-    </li>
-</ul>
+	<ul>
+        <li>Interactive Effects</li>
+        <li>Dynamically modifying web pages</li>
+        <li>Changing the HTML the browser originally downloaded</li>
+    </ul>
+    <p>What we're going to do:</p>
+    <ul>
+        <li>identify an element on the page</li>
+        <li>do something to the element</li>
+    </ul>
+
 </section>
 </div> 
  
@@ -109,11 +108,11 @@ document.getElementBy<strong>Id</strong>();
 
 document.getElement<strong>s</strong>By<strong>TagName</strong>();
 
-document.getElementsBy<strong>ClassName</strong>();
+document.getElementsBy<strong>ClassName</strong>();  //IE9
 
-document.query<strong>Selector</strong>();
+document.query<strong>Selector</strong>(); //IE8
  
-document.querySelector<strong>All</strong>();
+document.querySelector<strong>All</strong>(); //IE8
 </pre>
 </section>
 </div> 
@@ -198,17 +197,29 @@ classed.length?
  
   
 <div class="slide normal"> 
-<header><h1>Child, Parent, Siblings</h1></header> 
+<header><h1>children</h1></header> 
 <section class="content"> 
 <pre contenteditable>
 var box = document.querySelector("#box");
+
 var ul = box.getElementsByTagName("ul")[0];
-var kids = ul.childNodes;
-var first = ulKids[0].nodeValue;
+
+<small>// includes empty text nodes too</small>
+var kids = ul.<strong>childNodes</strong>;  
+
+<small>// text if textnode, value if attribute node, null if element</small>
+var first = ulKids[0].<strong>nodeValue</strong>;</pre>
+<p>Parents</p>
+<pre contenteditable>var lis = box.getElementsByTagName('li');
+var ul = lis[1].<strong>parentNode</strong>;
 </pre>
+<p>Siblings</p>
+<pre contenteditable>var firstli = lis[1].<strong>prevSibling</strong>;
+var thirdli = lis[1].<strong>nextSibling</strong>;</pre>
 </section>
 </div> 
  
+  
   
 
   
@@ -217,19 +228,51 @@ var first = ulKids[0].nodeValue;
 
 <div class="slide normal"> 
 <header>
-	<h1>Understanding the DOM</h1>
-	<h2>Identifying an element in a document</h2>
+	<h1>Changing Content</h1>
 </header> 
-<section class="content"> 
-<pre contenteditable></pre>
+<section class="content">
+<p>We need to find a DOM node so that we can add content to it, before it, after it, etc.</p>
+<pre contenteditable>&lt;div id=&quot;changeme&quot;&gt;
+  &lt;ul&gt;
+   &lt;li&gt;Some &lt;strong&gt;imp text&lt;/strong&gt;&lt;/li&gt;
+   &lt;li&gt;And &lt;a href=&quot;http://x.com&quot;&gt;a link&lt;/a&gt;.&lt;/li&gt;
+   &lt;li class=&quot;cl&quot;&gt;With a class&lt;/li&gt;
+   &lt;li class=&quot;cl&quot;&gt;another classed&lt;/li&gt;
+   &lt;li class=&quot;di&quot;&gt;Has an ID&lt;/li&gt; 
+  &lt;/ul&gt;
+&lt;/div&gt;</pre>
+<pre><small>//find elements</small>
+var lis = document.querySelectorAll('#changeme li');
+<small>//change the content of one</small>
+lis[2].<strong>innerHTML</strong> = 'JavaScript Rocks';</pre>
 </section>
 </div> 
  
   
 <div class="slide normal"> 
-<header><h1></h1></header> 
+<header><h1>Change Content</h1></header> 
 <section class="content"> 
-<pre contenteditable></pre>
+<div id="changeme">
+  <ul>
+   <li>Some <strong>imp text</strong></li>
+   <li>And <a href="http://x.com">a link</a>.</li>
+   <li class="cl">With a class</li>
+   <li class="cl">another classed</li>
+   <li class="di">Has an ID</li> 
+  </ul>
+ </div>
+ <pre><small>//find elements</small>
+var lis = document.querySelectorAll('#changeme li');
+
+<small>//change the content of one</small>
+lis[2].<strong>innerHTML</strong> = 'JavaScript Rocks';
+
+<small>//find another elements</small>
+var strong = lis[0].getElementsByTagName('strong');
+
+<small>//change that content too</small>
+strong[0].<strong>innerHTML</strong> = 'emboldened content';
+</pre>
 </section>
 </div> 
  

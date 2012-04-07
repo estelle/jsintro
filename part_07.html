@@ -2,7 +2,7 @@
 <html> 
   <head> 
     <meta charset="utf-8" />
-    <title>Intro to JavaScript: Part 5</title>
+    <title>Intro to JavaScript: Part 7</title>
     <link href="http://fonts.googleapis.com/css?family=Droid+Sans|Droid+Sans+Mono|Tangerine" rel="stylesheet" type="text/css" />
 <link href="css.css" rel="stylesheet"/>
 <style>
@@ -39,6 +39,111 @@
 </section>
 </div> 
 
+
+<div class="slide normal"> 
+<header><h1>Events</h1></header> 
+<section class="content">
+<ul>
+	<li>mousedown</li>
+    <li>mouseup</li>
+    <li>click</li>
+    <li>dblclick</li>
+    <li>mousemove</li>
+    <li>mouseover</li>
+    <li>mouseout</li>
+</ul>
+</section>
+</div> 
+
+
+<div class="slide normal"> 
+<header><h1>Adding Events</h1></header> 
+<section class="content"> 
+<p>Archaic method (really bad example)</p>
+<pre contenteditable id="codeexample">var snippet = document.getElementById('codeexample');
+snippet.<strong>onmouseover</strong> = pink; 
+snippet.<strong>onmouseout</strong> = notpink;
+
+function pink(){
+  snippet.style.backgroundColor = '#f06';	
+}
+function notpink(){
+  snippet.style.backgroundColor = '';	
+}
+</pre>
+</section>
+</div> 
+ 
+ 
+ 
+ 
+  
+
+ 
+ 
+  
+<div class="slide normal"> 
+<header><h1>addEventListener</h1></header> 
+<section class="content"> 
+<pre contenteditable>myNode.addEventListener(type, listener, !bubble?);</pre>
+<ul>
+	<li>register more than one event listener</li>
+</ul>
+<pre contenteditable>for(var i = 0; i &lt; lis.length ; i++){  
+   lis[i].<strong>addEventListener</strong>("<strong>click</strong>", <strong>calledFunction</strong>);
+} 
+
+function <strong>calledFunction</strong>(e){  
+   /*do something*/  
+}  </pre>
+</section>
+</div> 
+ 
+
+ <div class="slide normal advanced"> 
+<header><h1>Putting it all together</h1></header> 
+<section class="content"> 
+<pre contenteditable style="max-height: 500px; overflow:auto">var namespace = {
+  promos: ['val1', 'val2', 'val3'],
+  setUpButtons: function(){
+  	var listItems = document.querySelectorAll('#changeme li');
+    for(var i = 0; i < listItems.length; i++) {
+    	listItems[i].addEventListener("click", namespace.showClasses, true);
+    } 
+  },
+  showClasses: function(e) {
+		currentClass = this.getAttribute('class');
+		if(currentClass) {
+			this.innerHTML += ' class="' + currentClass + '"';
+		}
+    },
+  init: function(){
+  	namespace.setUpButtons();	
+  }
+}
+namespace.init();
+</pre>
+</section>
+</div>   
+
+  
+<div class="slide normal"> 
+<header><h1></h1></header> 
+<section class="content"> 
+But that doesn't work in IE8. <br>
+IE8 / 7 / 6 etc do not understand<br>
+<strong>addEventListener</strong>
+
+</section>
+</div> 
+ 
+  
+
+
+
+
+
+
 <div class="slide intro"> 
 <header><h1>Nope</h1></header> 
 <section class="content">
@@ -55,5 +160,16 @@ There's no more<br/>
   
   <script src="slides.js">
   </script>
+<script>
+var snippet = document.getElementById('codeexample');
+snippet.onmouseover = pink; 
+snippet.onmouseout = notpink;
 
+function pink(){
+	snippet.style.backgroundColor = '#f06';		
+}
+function notpink(){
+	snippet.style.backgroundColor = '';	
+}
+</script>
   </body> </html>

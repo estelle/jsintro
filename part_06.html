@@ -299,7 +299,42 @@ myUL.appendChild(newLI);
 </section>
 </div> 
  
+ 
+ <div class="slide normal"> 
+<header><h1>Remove Elements</h1></header> 
+<section class="content">
+<ol>
+	<li>Find the node you want to remove.</li>
+    <li>Find the parent of that node</li>
+    <li>Remove the parent's child</li>
+</ol> 
+<pre contenteditable>var lis = document.querySelectorAll('#changeme li');
+lis[4].<strong>parentNode</strong>.<strong>removeChild</strong>(lis[4]);</pre>
+
+<pre contenteditable>
+var box = document.getElementById('changeme');
+var list = box.getElementsByTagName('ul')[0];
+var fifthitem = box.getElementsByTagName('li')[4];
+var item = list.removeChild(fifthitem);
+</pre>
+</section>
+</div> 
+ 
   
+
+ <div class="slide normal"> 
+     <header><h1>Exercises</h1></header> 
+     <section class="content">
+     <p>Slide 11 displays the text created by the markup on slide 10. Let's play with it! In the console on slide 11 do the following:</p>
+     <ul>
+        <li>Change the text of the link</li>
+        <li>Change the bold text</li>
+        <li>Change the text of one of the list items.</li>
+        <li>Add a list item</li>
+        <li>Add some bold text as a child of one of the list items</li>
+     </ul>
+     </section>
+ </div> 
   
  
 
@@ -315,6 +350,7 @@ myUL.appendChild(newLI);
    
   </div>
   
-  <script src="slides.js"></script>
+  <script src="slides.js">
+  </script>
 
   </body> </html>

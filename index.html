@@ -149,12 +149,12 @@ firstName = "Estelle";
 var firstName = "Estelle";
      </pre>
      <ul>
-     	<li>begin with letters, numbers, $ or _</li>
-     	<li>only contain  letters, numbers, $ and _</li>
-     	<li>case sensitive</li>
+     	<li>Begin with letters, numbers, $ or _</li>
+     	<li>Only contain  letters, numbers, $ and _</li>
+     	<li>Case sensitive</li>
      	<li>Avoid reserved words &rarr;</li>
      	<li>Choose clarity and meaning</li>
-     	<li>pick a naming convention and stick with it</li>
+     	<li>Pick a naming convention and stick with it</li>
      </ul>
      </section>
  </div> 
@@ -354,7 +354,7 @@ anyValue = [3, 'red ribbon', true, 24];	//array</pre>
 <pre contenteditable>var cost = 2.5;
 var quantity = 10;
 var total = cost * quantity;</pre>
-<ul><li>Order of operations is same as math. Use parentheses</li>
+<ul><li>Order of operations is same as math. (Use parentheses.)</li>
 <li>modulo &rarr; remainder</li>
 </ul>
      </section>
@@ -395,9 +395,9 @@ var modulus = hard % easy;</pre>
 </section>
 <p style="font-size: larger">Exercise:</p>
 <ul style="font-size: larger">
-	<li>Guess the values are for the 3 slides?</li>
-    <li>Test the values in the console</li>
-    <li>Write a few equations and test in console</li>
+	<li>Guess: what are the values for the 3 slides?</li>
+    <li>Test the values in the console.</li>
+    <li>Write a few equations and test in console.</li>
     </ul>
     
 </div> 
@@ -420,13 +420,13 @@ var yupMath = <span class="imp">+</span>'2' + 4; 		// 6
 var yupMath = <span class="imp">Number(</span>'2'<span class="imp">)</span> + 4; 		// 6
 var notMath = Number('2foo') + 4 	// <span class="imp">NaN</span>
 var yupMath = <span class="imp">parseInt(</span>'2foo'<span class="imp">)</span> + 4;	// 6</pre>
-<p>Exercise: Try the expressions above, and your own</p>
+<p>Exercise: Try the expressions above, and also try your own</p>
      </section>
  </div>   
 
   
 <div class="slide normal"> 
-<header><h1>Loosely Typed language</h1></header> 
+<header><h1>Loosely Typed Language</h1></header> 
 <section class="content"> 
 <p>Type casting</p>
 <pre contenteditable>
@@ -472,7 +472,7 @@ console.log('value of iteration is: ' + ++iteration);
  </div>  
   
   
-  <div class="slide normal"> 
+  <div class="slide normal advanced""> 
      <header><h1>MadLibs with Window Methods</h1></header> 
      <section class="content"> 
      <pre contenteditable>var color = window.prompt('Your favorite color');
@@ -482,7 +482,7 @@ window.alert(count + ' ' + color + ' ' + tool + 's');</pre>
 
 <pre contenteditable>var answers = {
   color: window.prompt('Favorite Color'),
-  tool: window.prompt('Analog Printer?'),
+  tool: window.prompt('What do you draw with?'),
   count: window.prompt('Favorite Number?'),
   message: function(){
 	  return answers.count + ' ' + answers.color + ' ' + answers.tool + 's';

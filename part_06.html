@@ -2,7 +2,7 @@
 <html> 
   <head> 
     <meta charset="utf-8" />
-    <title>Intro to JavaScript: Part 5</title>
+    <title>Intro to JavaScript: Part 6</title>
     <link href="http://fonts.googleapis.com/css?family=Droid+Sans|Droid+Sans+Mono|Tangerine" rel="stylesheet" type="text/css" />
 <link href="css.css" rel="stylesheet"/>
 <style>
@@ -43,14 +43,14 @@
 <header><h1>Uses of JS in Websites</h1></header> 
 <section class="content"> 
 	<ul>
-        <li>Interactive Effects</li>
+        <li>Interactive effects</li>
         <li>Dynamically modifying web pages</li>
         <li>Changing the HTML the browser originally downloaded</li>
     </ul>
     <p>What we're going to do:</p>
     <ul>
-        <li>identify an element on the page</li>
-        <li>do something to the element</li>
+        <li>Identify an element on the page</li>
+        <li>Do something to the element</li>
     </ul>
 
 </section>
@@ -208,7 +208,7 @@ var ul = box.getElementsByTagName("ul")[0];
 var kids = ul.<strong>childNodes</strong>;  
 
 <small>// text if textnode, value if attribute node, null if element</small>
-var first = ulKids[0].<strong>nodeValue</strong>;</pre>
+var first = kids[0].<strong>nodeValue</strong>;</pre>
 <p>Parents</p>
 <pre contenteditable>var lis = box.getElementsByTagName('li');
 var ul = lis[1].<strong>parentNode</strong>;
@@ -281,12 +281,12 @@ strong[0].<strong>innerHTML</strong> = 'emboldened content';
 <header><h1>Add an element</h1></header> 
 <section class="content"> 
 <ol>
-	<li>Create an element</li>
-    <li>Set attributes on that element</li>
-    <li>Create your textnode</li>
-    <li>Add content to that element by appending the textnode to the element you created</li>
-    <li>Targe the DOM node this new element will be next to</li>
-    <li>Add that node next to the the targeted node</li>
+	<li>Create an element.</li>
+    <li>Set attributes on that element.</li>
+    <li>Create your textnode.</li>
+    <li>Add content to that element by appending the textnode to the element you created.</li>
+    <li>Targe the DOM node this new element will be next to.</li>
+    <li>Add that node next to the the targeted node.</li>
 </ol>
 <pre contenteditable>
 var newLI = document.<strong>createElement</strong>('li');
@@ -305,8 +305,8 @@ myUL.appendChild(newLI);
 <section class="content">
 <ol>
 	<li>Find the node you want to remove.</li>
-    <li>Find the parent of that node</li>
-    <li>Remove the parent's child</li>
+    <li>Find the parent of that node.</li>
+    <li>Remove the parent's child.</li>
 </ol> 
 <pre contenteditable>var lis = document.querySelectorAll('#changeme li');
 lis[4].<strong>parentNode</strong>.<strong>removeChild</strong>(lis[4]);</pre>

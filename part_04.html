@@ -40,7 +40,7 @@
 <pre contenteditable>var word = "etcetera";
 var abbr = word.substring(0,3);</pre><small>substring(startPos, endPos)</small>
 <p>Replace content</p>
-<pre contenteditable>var pinkFloyd = "Good bye cruel world";
+<pre contenteditable>var pinkFloyd = "Goodbye cruel world";
 var terryJacks = pinkFloyd.<strong>replace</strong>('cruel world', 'to you my trusted friend');</pre><small>replace(origSub, newSub); first occurence</small>
 <pre contenteditable>var colors = "Grey, lightgrey, darkgrey, slateGrey";
 var colours = colors.<strong>replace</strong>(<strong>/</strong>grey<strong>/gi</strong>, "gray");</pre><small>g = global, i = case-insensitive</small>
@@ -50,7 +50,7 @@ var colours = colors.<strong>replace</strong>(<strong>/</strong>grey<strong>/gi<
 <div class="slide normal"> 
 <header><h1>String Methods (cont.)</h1></header> 
 <section class="content">
-<p>searching</p> 
+<p>Searching</p> 
 <pre contenteditable>var willS="To be or not to be, that is the question."
 var first = willS.<strong>indexOf</strong>('be'); // 3
 var last =  willS.<strong>lastIndexOf</strong>('be'); //16
@@ -64,7 +64,7 @@ var section = willS.<strong>slice</strong>(9, 18); // "not to be"
 var section = willS.<strong>slice</strong>(20); 
 var section = 
    willS.<strong>slice</strong>(willS.<strong>lastIndexOf</strong>(',') + 2);</pre>
-<small>slice(start, end) where end is not included. <br>&nbsp; &nbsp; If end is ommitted, will return from firstChar on</small>
+<small>slice(start, end) where end is not included. <br>&nbsp; &nbsp; If end is omitted, will return from firstChar on.</small>
 </section>
 
 </div>  
@@ -84,7 +84,7 @@ var whisper = speak.<strong>toLowerCase</strong>();</pre>
 
   
 <div class="slide normal"> 
-<header><h1>Methods</h1><h2>We've already used these</h2></header> 
+<header><h1>Methods</h1><h2>We've already used these:</h2></header> 
 <section class="content"> 
 <pre contenteditable>
 console.log(arg);
@@ -107,14 +107,16 @@ array.splice();</pre>
 <div class="slide normal"> 
 <header>
 <h1>Functions</h1>
-<h2>reusable code that does something!</h2>
+<h2>Reusable code that does something!</h2>
 </header> 
 <section class="content"> 
 <pre contenteditable>function functionName(param1, param2) {
     // javascript you want to run
 }</pre>
 
-<pre>alertName('Estelle', 'Weyl');
+<pre>
+   // function call
+  alertName('Estelle', 'Weyl');
 
 function alertName(first, last) {
     var fullName = first + " " + last;
@@ -127,7 +129,7 @@ function alertName(first, last) {
 <div class="slide normal"> 
 <header>
 <h1>Functions</h1>
-<h2>reusable code that does something!</h2>
+<h2>Reusable code that does something!</h2>
 </header> 
 <section class="content"> 
 <pre contenteditable>//declare variables
@@ -155,10 +157,10 @@ total = <strong>multiplier(</strong>val1, val2<strong>)</strong>;
 <header><h1>Variable Scope</h1></header> 
 <section class="content">
 <p>Variables defined outside a function are global variables. They are accessible anywhere in your program once declared.</p>
-<p>Variables declared with var inside a function are local to that function</p>
+<p>Variables declared with var inside a function are local to that function.</p>
 <p>Variables defined in a function without being locally declared are global. Arguments are always local whether implicit or explicit.</p>
 <pre contenteditable>function kiss(){
-  for(<strong>i = 0</strong>; i < <strong>arguments.length</strong>; i++){
+  for(var <strong>i = 0</strong>; i < <strong>arguments.length</strong>; i++){
 	console.log("I want to kiss " + <strong>arguments[i]</strong>)
   }
 }
@@ -171,13 +173,15 @@ kiss("Bill", "Barack", "Johnny", "Angelina");</pre>
 <header><h1>Global Scope</h1></header> 
 <section class="content"> 
 <pre contenteditable>var vacationDays = 14;
-
+// vacationDays = global variable
 var holiday= function(vacationDays) {
     var name = prompt('Name');
     console.log(name + "'s trip lasted " + vacationDays + " days")
 }
 
+// vacationdays = 7 here is a local variable to the function
 holiday(7);
+// see, vacationdays is still 14 days
 console.log(vacationDays);
 //console.log(name);</pre>
 </section>
@@ -230,7 +234,7 @@ console.log(num + " squared is " + <strong>squared(num)</strong>);
 <div class="slide normal"> 
 <header><h1>Return rules</h1></header> 
 <section class="content">
-<p>Function with no return, return undefined</p> 
+<p>Functions with no explicit return will return undefined.</p> 
 <pre contenteditable>var squared = function(x){
 	<strong>console.log( x * x)</strong>
 }
@@ -243,20 +247,20 @@ console.log(num + " squared is " + <strong>squared(num)</strong>);
 
 <div class="slide normal"> 
 <section class="content"> 
-<p>When a function hits a return, it exits the function and goes back to the callee</p>
+<p>When a function hits a return, it exits the function and goes back to the caller.</p>
 <pre contenteditable>var ageLimit = function(age) {
   if(isNaN(age)) {
       <strong>return</strong> "Ummmm.... hello!";           }
   if(age >=65)   { 
-      <strong>return</strong> "You're old enough to retire";}
+      <strong>return</strong> "You're old enough to retire!";}
   if(age > 30)   {
-      <strong>return</strong> "Aren't your 29 for the " + 
-              (age-28) + "th time";        }
+      <strong>return</strong> "Aren't you 29 for the " + 
+              (age-28) + "th time?";        }
   if(age >= 25)  {
-      <strong>return</strong> "you can finally rent a car"; }
+      <strong>return</strong> "You can finally rent a car!"; }
   if(age < 18)   {
-      <strong>return</strong> "you're too young to vote!";  }
-  <strong>return</strong> "I'm speechless";
+      <strong>return</strong> "You're too young to vote!";  }
+  <strong>return</strong> "I'm speechless ...";
 }
 
 var message = ageLimit(+prompt("How old are you?"));

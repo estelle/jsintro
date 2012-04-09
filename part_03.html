@@ -71,6 +71,25 @@
      </section>
  </div> 
 
+
+
+  <div class="slide normal"> 
+      <header><h1>Comparing Case Insensitive Strings</h1></header> 
+      <section class="content"> 
+      <pre contenteditable>var firstName = prompt('First Name?');
+  if(firstName.toUpperCase() === 'ESTELLE') {
+    alert(firstName);
+  }</pre>
+  <pre contenteditable>var errMsg,
+     email1 = prompt('Your email address:');
+     email2 = prompt('Re-enter email address:');
+
+  if (email1.toUpperCase() != email2.toUpperCase()) {
+  	errMsg += "Email addresses do not match\n";
+  }</pre>
+      </section>
+  </div>
+
  <div class="slide normal"> 
      <header><h1>Conditional Examples</h1></header> 
      <section class="content"> 
@@ -80,6 +99,7 @@
      <pre contenteditable style="font-size: larger">if(0 < x &amp;&amp; x < 10)</pre>
      <pre contenteditable style="font-size: larger">if(!firstName)</pre>
      <pre contenteditable style="font-size: larger">if(nincompoops.length == 1)</pre>
+     <pre contenteditable style="font-size: larger">if(isNaN(fruitcake))</pre>
      </section>
  </div> 
  
@@ -133,7 +153,7 @@ errMsg += "Email addresses do not match\n";
      <header><h1>Otherwise ...</h1><h2>if ... else if .... else</h2></header> 
      <section class="content"> 
      <pre contenteditable>var msg,
-    age = <strong>+</strong>prompt("how old are you");
+    age = <strong>+</strong>prompt("how old are you?");
     
 <strong>if</strong>(<strong>!age</strong> <strong>||</strong> <strong>isNaN(age)</strong>) {
   msg = "You're too old to tell us your age?";
@@ -200,7 +220,7 @@ do {
 <ul>   
 <li>Is your user old enough to vote? Drink? Rent a car? Run for president? Retire?</li>
 <li>Multiplication Table: pick a number? How many multiplication values do you want? <br>Example input: 9, 3. <br>Example output: 9 x 1 = 9, 9 x 2 = 18, 9 x 3 = 27</li><li>If you used the while loop for the above, do it with the for loop. If you used the for loop, rewrite it as a while loop.</li>
-<li>Have the user guess your number. Tell them they're warm if close or cold if far off</li>
+<li>Have the user guess your number. Tell them they're warm if close or cold if far off.</li>
 </ul>
 
 </section>

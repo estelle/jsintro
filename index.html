@@ -68,19 +68,40 @@
      </section>
  </div>
     
+    <div class="slide normal"> 
+     <header><h1>Warning!!!</h1></header> 
+     <section class="content">
+     <p class="explain">Now that you know how to include JavaScript in your webpages, realize that you should not include your JS in the &lt;head> in production. When your browser hits a script in a document while loading the page, it ceases all downloads and rendering until it finishes downloading, parsing and executing your script.</p>
+     <p class="explain">Put your scripts at the *end* of your documents to improve perceived download speed.</p>
+     <p class="explain">Your browser is single threaded. When downloading, parsing and executing JS, all other features (download, user interactions like button clicking, etc) are paused until your browser is finished with the JavaScript</p>  
+     </section>
+ </div>
+    
   <div class="slide normal"> 
      <header><h1>Syntax</h1></header> 
      <section class="content"> 
      <p>Statements</p>
-     <pre contenteditable>alert('this is an alert');
-var addition = 14 * 7;
-var functionName = function(){
+     <pre contenteditable>alert('this is an alert');</pre>
+<pre contenteditable>var addition = 14 * 7;</pre>
+<pre contenteditable>var functionName = function(){
     alert('an alert');
-};
-     </pre>
-     <p>Comments
+};</pre>
+
+<p class="explain">Don't worry if this slide doesn't make sense yet</p>
+</section>
+</div> 
+
+
+<div class="slide normal"> 
+<header><h1>Comments</h1></header> 
+<section class="content"> 
+<p class="explain">Comments make your code more understandable for those updating your code in the future, including YOU!</p>
+<p>Single Line Comments </p>
+
      <pre contenteditable>// this is a single line comment
-     
+</pre>
+<p>Multi Line Comments</p>
+<pre contenteditable>     
 /* 
    this is a multi-
    line comment
@@ -90,44 +111,83 @@ var functionName = function(){
  </div>    
     
     <div class="slide normal"> 
-     <header><h1>Types of Data</h1></header> 
-     <section class="content"> 
+     <header><h1>Data Types</h1></header> 
+     <section class="content">
+     <h1>Primitive Types</h1> 
      <ul>
      	<li>Numbers </li>
         <li>Strings</li>
         <li>Booleans</li>
-        <li>Objects</li>
+        <li><code>null</code></li>
+        <li><code>undefined</code></li>
      </ul>
+       
     
      <pre contenteditable>     'Estelle'
-     "Estelle"
      "It's JavaScript"
      'It\'s JavaScript'
      true
      27
-     3.1415
-     window</pre>
-     <p>Everything in JavaScript is an Object!</p>
+     3.1415</pre>
+     <h1>Objects</h1>
+     <p style="margin:0">Everything else in JavaScript is an Object!</p>
      </section>
     </div>
-    
-   
-    
-    
-    
-    <div class="slide normal"> 
-     <header><h1>Declaring Strings</h1></header> 
+
+
+
+<div class="slide normal"> 
+<header><h1>Numbers</h1></header> 
+<section class="content"> 
+<pre contenteditable>3 === 3.0000000</pre>
+<ul>	
+	<li>64-bit float</li>
+	<li>A single number type</li>
+</ul>
+<pre contenteditable> 5e3 == 5000 
+0x12 == 18 // base 16
+ 010 ==  8 // base 8
+</pre>
+<p class="explain"><code>typeof NaN // "number"<br/>typeof Infinity // "number"</code></p>
+     </section>
+ </div>
+
+
+
+<div class="slide normal"> 
+     <header><h1>Implicit Type Coercion</h1></header> 
+     <section class="content"> 
+
+<pre contenteditable>
+ 3  + 3 ===  6
+"3" + 3 === "33"
+ 3  * 1 ===  3
+"3" * 1 ===  3
+</pre>
+</section>
+</div> 
+
+  
+
+ 
+  
+
+
+
+
+ <div class="slide normal"> 
+     <header><h1>String Basics</h1></header> 
      <section class="content"> 
      <pre contenteditable>'Estelle'
 "Estelle"
 'It\'s JavaScript'
-'\'\\\' is called a \'back slash\''</pre>
+'\'\\\' is called a \'back slash\''
+"Don't need to escape with mixed quotes"</pre>
           <pre contenteditable>var goodString = "Really long strings" + 
   " can be concatenated across lines";
 
-var goodString = "This is\
- another way of creating\
- a multi-line string"
+var goodString = "This may work but is a \
+  bad idea. Space at end?"
 
 var badString = &quot;This will
  fail&quot;        
@@ -137,27 +197,91 @@ var badString = &quot;This will
     </div>
     
     
+    
+
+<div class="slide normal"> 
+<header><h1>Booleans</h1></header> 
+<section class="content"> 
+<pre contenteditable>true
+false</pre>
+<pre contenteditable>var truthy = true,
+    falsey = false;</pre>
+</section>
+</div>
+
+
+   
+<div class="slide normal"> 
+<header><h1>Variables &amp; Assignment</h1></header> 
+<section class="content">
+<h1>Variable</h1>
+<pre contenteditable>var firstName;</pre>
+<p class="explain">Variables that are declared but not assigned return <code>undefined</code></p>
+<h1>Assignment</h1>
+<pre contenteditable>firstName = "Estelle";</pre>
+<h1>Variable and Assignment</h1>
+<pre contenteditable>var firstName = "Estelle";</pre>
+
+</section>
+</div> 
+ 
+<div class="slide normal"> 
+<header><h1>Several Variables</h1></header> 
+<section class="content">
+<h1>Variables</h1>
+<pre contenteditable>var firstName, lastname, age;</pre>
+<h1>With Assignment</h1>
+<pre contenteditable>var firstName = "Estelle",
+    lastname = "Weyl",
+    age = 29;</pre>
+<p class="explain">You can declare (and assign) several variables in a single statement, with multi-line statements being way easier to read</p>
+</section>
+</div>   
+   
+ 
+ 
+ <div class="slide normal"> 
+     <header><h1>Declaring Variables</h1></header> 
+     <section class="content"> 
+     <pre contenteditable>
+var firstName, age, isAwesome;
+    firstName = "Estelle";
+    age = 29;
+    isAwesome = true;</pre>
+     <pre contenteditable>
+var firstName = "Estelle";
+var age = 29;
+var isAwesome = true;</pre>
+     <pre contenteditable>
+var firstName = "Estelle",
+    age = 29,
+    isAwesome = true; </pre>
+      <pre contenteditable>var firstName="Estelle",age=29,isAwesome=true;</pre>
+     </section>
+ </div>   
+   
+    
+   
      <div class="slide normal"> 
      <header><h1>Variables</h1></header> 
      <section class="content"> 
-     <pre contenteditable>
-// 2 steps: Name and declare the variable
-var firstName;
-firstName = "Estelle";
-
-// Name and declare in one step
-var firstName = "Estelle";
-     </pre>
+    
      <ul>
      	<li>Begin with letters, numbers, $ or _</li>
      	<li>Only contain  letters, numbers, $ and _</li>
      	<li>Case sensitive</li>
-     	<li>Avoid reserved words &rarr;</li>
+     	<li>Avoid reserved words <i class="explain">see next slide &rarr;</i></li>
      	<li>Choose clarity and meaning</li>
      	<li>Pick a naming convention and stick with it</li>
      </ul>
      </section>
- </div> 
+ </div>     
+    
+    
+  
+    
+    
+
 
 
     
@@ -264,51 +388,31 @@ var firstName = "Estelle";
      </section>
  </div> 
  
-      
- <div class="slide normal"> 
-     <header><h1>Declaring Variables</h1></header> 
-     <section class="content"> 
-     <pre contenteditable>
-var firstName, lastName, age, isAwesome;
-    firstName = "Estelle";
-    lastName = 'Weyl';
-    age = 29;
-    isAwesome = true;</pre>
-     <pre contenteditable>
-var firstName = "Estelle";
-var lastName = 'Weyl';
-var age = 29;
-var isAwesome = true;</pre>
-     <pre contenteditable>
-var firstName = "Estelle",
-    lastName = 'Weyl',
-    age = 29,
-    isAwesome = true; </pre>
-      <pre contenteditable>var firstName="Estelle",lastName='Weyl',age=29,isAwesome=true;</pre>
-     </section>
- </div> 
+
+ 
 
       
       
         
-    <div class="slide normal advanced"> 
+    <div class="slide normal"> 
      <header><h1>Loosely typed language</h1></header> 
      <section class="content"> 
-     <pre contenteditable>var anyValue = 'red ribbon';		// string
+     <pre contenteditable>
+var anyValue = 'red ribbon';       // string
      
-     
-anyValue = 24; 				// number   
+    anyValue = 24;                 // number   
 
-anyValue = true; 			// boolean
+    anyValue = true;               // boolean
 
-anyValue = [3, 'red ribbon', true, 24];	//array</pre>
+    anyValue = [3, 'hello', true]; // array</pre>
+    <p class="explain">Unlike many other programming languages, JS is loosely typed. Variable types are not declared. Variable will be reassigned to a different type with assignment to a different type.</p>
      </section>
  </div> 
     
  
  <div class="slide intro"> 
      <header><h1 style="text-decoration:line-through; ">Global Scope</h1></header> 
-     <section class="content"> 
+     <section class="content"> <p class="explain" style="font-size: 2rem; text-align: left">Any variable declared outside of a function will have global scope. In the browser this means that all global variables and functions are methods and properties of the <code>window</code> object.<br/><br/> To avoid polluting the <code>window</code> object, namespace your code.</p>
      </section>
  </div>
 
@@ -318,21 +422,18 @@ anyValue = [3, 'red ribbon', true, 24];	//array</pre>
      <pre contenteditable>
  var person = {
     firstName: "Estelle",
-    lastName: 'Weyl',
     age: 29,
     isAwesome: true
  }; </pre>
      
       <pre contenteditable>var person = new Object();
     person['firstName'] = "Estelle",
-    person['lastName'] = 'Weyl',
     person['age'] = 29,
     person['isAwesome'] = true; </pre>
      
      
-      <pre contenteditable>var person = 'foo'; // or assign any objectish value
+      <pre contenteditable>var person = {}; 
     person.firstName =  "Estelle",
-    person.lastName =  'Weyl',
     person.age = 29,
     person.isAwesome = true;</pre>
      </section>
@@ -370,6 +471,7 @@ var sum = easy + hard;</pre>
 <pre contenteditable style="font-size:larger">var easy = 10 - 5;
 var hard = 6298 - 3817;
 var difference = hard - easy;</pre>
+<p><b>Exercise:</b> Get the values for easy, hard, sum and difference</p>
 </section>
 </div> 
  
@@ -383,6 +485,8 @@ var product = easy * hard;</pre>
 <pre contenteditable  style="font-size: larger">var easy = 5 / 5;
 var hard = 51 / 17;
 var quotient = hard / easy;</pre>
+<p><b>Exercise:</b> Get the values for easy, hard, product and quotient</p>
+<p class="explain">Note: dividing any number by <code>0</code> returns <code>infinity</code></p>
 </section>
 </div> 
  
@@ -393,12 +497,16 @@ var quotient = hard / easy;</pre>
 var hard = 41 % 7;
 var modulus = hard % easy;</pre>
 </section>
-<p style="font-size: larger">Exercise:</p>
-<ul style="font-size: larger">
-	<li>Guess: what are the values for the 3 slides?</li>
-    <li>Test the values in the console.</li>
-    <li>Write a few equations and test in console.</li>
-    </ul>
+<p><b>Exercise:</b> Get the values for easy, hard and modulus.</p>
+<p>Here are a few more equations to put in the console:</p>
+<pre contenteditable>
+4 + 7			10 % 3
+5 - 2           	12 % 4
+9 * 9           	30 % 28
+27 / 3			44 % 7
+9 + 2 * 3 - 8
+(9 + 2) * (3 - 8)
+</pre>
     
 </div> 
  
@@ -414,13 +522,25 @@ var lastName = "Weyl";
 var age = 29;
 var fullName = firstName + " " + lastName;</pre>
 <p>Joining Numbers and String</p>
-<pre contenteditable>var sentence = firstName + " is not really " + age + " years old";</pre>
+<pre contenteditable>var sentence = firstName + 
+  " is not really " + age + " years old";</pre> 
+     </section>
+ </div>
+
+<div class="slide normal"> 
+     <header><h1>Type conversion to enable math</h1></header> 
+     <section class="content">
 <pre>var notMath = '2' + 4;			// 24
+
 var yupMath = <span class="imp">+</span>'2' + 4; 		// 6
+
 var yupMath = <span class="imp">Number(</span>'2'<span class="imp">)</span> + 4; 		// 6
+
 var notMath = Number('2foo') + 4 	// <span class="imp">NaN</span>
+
 var yupMath = <span class="imp">parseInt(</span>'2foo'<span class="imp">)</span> + 4;	// 6</pre>
-<p>Exercise: Try the expressions above, and also try your own</p>
+<p><strong>Exercise:</strong>
+<br/>Try the expressions above, and try your own</p>
      </section>
  </div>   
 
@@ -449,7 +569,9 @@ if("1" === 1) {
 
   <div class="slide normal"> 
      <header><h1>Operator Shortcuts</h1></header> 
-     <section class="content"><ul style="float:left; margin-right:40px;"><li>+=</li>
+     <section class="content">
+     <ul style="float:left; margin-right:40px;">
+       <li>+=</li>
        <li>-=</li>
        <li>*=</li>
        <li>/=</li>
@@ -472,14 +594,15 @@ console.log('value of iteration is: ' + ++iteration);
  </div>  
   
   
-  <div class="slide normal advanced""> 
-     <header><h1>MadLibs with Window Methods</h1></header> 
-     <section class="content"> 
+  <div class="slide normal advanced"> 
+     <header>
+     	<h1>MadLibs with Window Methods</h1>
+     </header> 
+     <section class="content">
      <pre contenteditable>var color = window.prompt('Your favorite color');
 var tool = window.prompt('What do you draw with?');
 var count = window.prompt('Favorite Number?');
 window.alert(count + ' ' + color + ' ' + tool + 's');</pre>
-
 <pre contenteditable>var answers = {
   color: window.prompt('Favorite Color'),
   tool: window.prompt('What do you draw with?'),

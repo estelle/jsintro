@@ -48,16 +48,67 @@
      </section>
  </div>  
  
+
+
+<div class="slide normal"> 
+<header><h1>Back to Booleans</h1></header> 
+<section class="content"> 
+<pre contenteditable>true
+false</pre>
+<pre contenteditable>var truthy = true,
+    falsey = false;</pre>
+</section>
+</div>
+
+
+<div class="slide normal"> 
+<header><h1>Falsey</h1></header> 
+<section class="content"> 
+<p>Everything value can return a Boolean Value.</p>
+<h2>False</h2>
+<pre contenteditable>false
+undefined
+null
+0 (-0)
+""
+NaN</pre>
+<p>Everything else is truthy</section>
+</section>
+</div> 
+           
+ <div class="slide normal"> 
+<header><h1>Truthy</h1></header> 
+<section class="content">
+<p>Everything that is not falsy is truthy</p>
+<h2>Truthy</h2> 
+<pre contenteditable>true
+42
+0.000001
+"Estelle"</pre>
+<p>Objects, arrays, functions &amp; regular expressions</p>
+<pre contenteditable>function foo(){}
+[1,2,3]
+[]
+{firstName: "Estelle", age: 29, isAwesome: true}
+{}
+/\w{6,9}/</pre>
+</section>
+</div> 
+ 
+  
+
+
  
  <div class="slide normal"> 
-     <header><h1>Comparison Operator</h1></header> 
+     <header><h1>Comparison Operators</h1></header> 
      <section class="content"> 
-     <table cellspacing="0" cellpadding="5" style="border-collapse:collapse">
+     <table cellspacing="0" cellpadding="5" style="border-collapse:collapse; float: left; margin-right: 20px;">
      	<thead><tr><th>Operator</th><th>Definition</th></tr></thead>
         <tbody>
         <tr><td>==</td><td>Equal to</td></tr>
         <tr><td>===</td><td>Equal to &amp; same type</td></tr>
         <tr><td>!=</td><td>Not Equal to</td></tr>
+        <tr><td>!==</td><td>Not Equal to / not same type</td></tr>
         <tr><td>&gt;</td><td>Greater than</td></tr>
         <tr><td>&gt;=</td><td>Greater or equal to</td></tr>
         <tr><td>&lt;</td><td>Less than</td></tr>
@@ -67,59 +118,72 @@
         <tr><td>||</td><td>OR</td></tr>
         </tbody>
      </table>
+     </section>
+ </div>   
+ 
+ 
+     <div class="slide normal"> 
+     <header><h1>Comparison Operators</h1></header> 
      
+  <section class="content"> 
+     <p>Does <code>foo</code> exist? Is it truthy?</p>
+     <pre contenteditable>if(foo) { } </pre><p>true or false?</p>
+     <pre contenteditable>if(x > y) { } </pre><p>Is x truthy? If not, is y truthy?</p>
+     <pre contenteditable>if(x || y) { } </pre><p>are x and y BOTH truthy</p>
+     <pre contenteditable>if(x && y) { } </pre>
+  
      </section>
  </div> 
 
-
+<div class="slide normal"> 
+<header><h1>Comparison Operators</h1></header> 
+<section class="content"> 
+<h2>Strict Equality Operator: <code>===</code></h2>
+<pre contenteditable>console.log(5 ==  "5");
+console.log(5 === "5") 
+</pre>
+<pre contenteditable>console.log(5 !=  "5");
+console.log(5 !== "5") 
+</pre>
+</section>
+</div> 
+ 
+  
+<div class="slide normal"> 
+     <header><h1>Conditional Examples</h1></header> 
+     <section class="content"> 
+     <pre contenteditable>if(5 > 4)</pre>
+     <pre contenteditable>if("Clinton" > "Bush")</pre>
+     <pre contenteditable>if(5 == '5')</pre>
+     <pre contenteditable>if(0 < x &amp;&amp; x < 10)</pre>
+     <pre contenteditable>if(!firstName)</pre>
+     <pre contenteditable>if(heroes.length == 1)</pre>
+     <pre contenteditable>if(isNaN('fruitcake'))</pre>
+     </section>
+ </div> 
 
   <div class="slide normal"> 
       <header><h1>Comparing Case Insensitive Strings</h1></header> 
       <section class="content"> 
+      <p>If a data entry point is not case sensitive (like username rather than password), realize that your user's capitalization may not match what you have stored: </p>
       <pre contenteditable>var firstName = prompt('First Name?');
-  if(firstName.toUpperCase() === 'ESTELLE') {
+  if(firstName.<strong>toUpperCase</strong>() === 'ESTELLE') {
     alert(firstName);
   }</pre>
   <pre contenteditable>var errMsg,
      email1 = prompt('Your email address:');
      email2 = prompt('Re-enter email address:');
 
-  if (email1.toUpperCase() != email2.toUpperCase()) {
+  if (email1.<strong>toLowerCase</strong>() != email2.<strong>toLowerCase</strong>()) {
   	errMsg += "Email addresses do not match\n";
   }</pre>
       </section>
   </div>
 
- <div class="slide normal"> 
-     <header><h1>Conditional Examples</h1></header> 
-     <section class="content"> 
-     <pre contenteditable style="font-size: larger">if(5 > 4)</pre>
-     <pre contenteditable style="font-size: larger">if("Clinton" > "Bush")</pre>
-     <pre contenteditable style="font-size: larger">if(5 == '5')</pre>
-     <pre contenteditable style="font-size: larger">if(0 < x &amp;&amp; x < 10)</pre>
-     <pre contenteditable style="font-size: larger">if(!firstName)</pre>
-     <pre contenteditable style="font-size: larger">if(nincompoops.length == 1)</pre>
-     <pre contenteditable style="font-size: larger">if(isNaN(fruitcake))</pre>
-     </section>
- </div> 
  
  
- <div class="slide normal"> 
-     <header><h1>Comparing Case Insensitive Strings</h1></header> 
-     <section class="content"> 
-     <pre contenteditable>var firstName = prompt('First Name?');
-if(firstName.toUpperCase() === 'ESTELLE') {
-   alert(firstName);
-}</pre>
-<pre contenteditable>var errMsg,
-    email1 = prompt('Your email address:');
-    email2 = prompt('Re-enter email address:');
+ 
 
-if (email1.toUpperCase() != email2.toUpperCase()) {
-	errMsg += "Email addresses do not match\n";
- }</pre>
-     </section>
- </div> 
  
  
  
@@ -129,17 +193,11 @@ if (email1.toUpperCase() != email2.toUpperCase()) {
  <pre contenteditable>var age = parseInt(prompt('Lie about your age?'));
 if(isNaN(age)) {
   // not a number!! 
-  var banana = 'frog'
+  errMsg += "Your age is an integer, silly"
 } 
 
 </pre>
-<pre contenteditable>var errMsg,
-email1 = prompt('Your email address:');
-email2 = prompt('Re-enter email address:');
 
-if (email1.toUpperCase() != email2.toUpperCase()) {
-errMsg += "Email addresses do not match\n";
-}</pre>
  </section>
  </div> 
 
@@ -150,7 +208,8 @@ errMsg += "Email addresses do not match\n";
  
 
  <div class="slide normal"> 
-     <header><h1>Otherwise ...</h1><h2>if ... else if .... else</h2></header> 
+     <header><h1>Otherwise ...</h1>
+     <h2>if ... else if .... else</h2></header> 
      <section class="content"> 
      <pre contenteditable>var msg,
     age = <strong>+</strong>prompt("how old are you?");

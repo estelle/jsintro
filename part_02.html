@@ -39,12 +39,12 @@
 
 var random = <span class="imp">[</span>'shoe',27,null,<span class="imp">[42,17,19]</span>,Math.PI<span class="imp">]</span>;
 </pre>
-<p>Easier (or harder) to read</p>
-<pre contenteditable>var nincompoops = [ 'Rush Limbaugh',
-                    'Sarah Palin',
-                    'Glenn Beck',
-                    'Rick Perry'];</pre>
-<p>Old school</p>
+<p>Easier to read</p>
+<pre contenteditable>var heroes = [ 'Anita Borg',
+               'Grace Hopper',
+               'Ada Lovelace',
+               'Emmy Noether'];</pre>
+<p>Old school (with constructor)</p>
 <pre contenteditable>
 var browsers = <span class="imp">new Array(</span>'Safari', 'Chrome', 'Explorer', 'FireFox', 'Opera'<span class="imp">)</span>;
 </pre>
@@ -56,30 +56,43 @@ var browsers = <span class="imp">new Array(</span>'Safari', 'Chrome', 'Explorer'
 <div class="slide normal"> 
 <header><h1>Arrays &rarr; zero indexed</h1></header> 
 <section class="content"> 
+<p>Use brackets to retrieve values based on index</p>
 <pre contenteditable>arrayName[index]</pre>
 <p>First Item</p>
-<pre contenteditable>nincompoops[0];</pre>
+<pre contenteditable>heroes[0];</pre>
 <p>Last Item</p>
-<pre contenteditable>nincompoops[nincompoops.length - 1];</pre>
+<pre contenteditable>heroes[heroes.length - 1];</pre>
 <p>Add item</p>
-<pre contenteditable>nincompoops[nincompoops.length] = 'Donald Trump';</pre>
+<pre contenteditable>heroes[heroes.length] = 'Marie Curie';</pre>
 </section>
 </div> 
 
-
+<div class="slide normal"> 
+     <header><h1>Arrays are Objects</h1></header> 
+     <section class="content">
+     <p>Arrays are Objects</p>
+     <p>Arrays are loosely typed</p>
+     <p>Like all objects, arrays have properties</p>
+     <pre contenteditable>var arrayItemCount = myArrayName.length;</pre>
+     
+     <p>Like all objects, arrays have methods</p>
+     <pre contenteditable>myArrayName.push('Estelle');</pre>
+     <p class="explain">Like all Objects, Arrays have built in functions, or "methods" they inherit from the Object object.</p>
+     </section>
+ </div>
 
 <div class="slide normal"> 
 <header><h1>Array Methods: Adding Items</h1></header>
 <section class="content">
-<pre contenteditable>nincompoops[nincompoops.length] = 'Donald';</pre> 
+<pre contenteditable>heroes[heroes.length] = 'Hedy Lamar';</pre> 
 <p>Add to end:</p>
-<pre contenteditable> nincompoops.push('Rick');
- nincompoops<span class="imp">.push(</span>'Michelle', 'Newt', 'Mitt'<span class="imp">)</span>;</pre>
+<pre contenteditable> heroes.push('Barbara Liskov');
+ heroes<span class="imp">.push(</span>'Fran Allen', 'Valerie Aurora'<span class="imp">)</span>;</pre>
  <p>Add to beginning</p>
-<pre contenteditable>nincompoops<span class="imp">.unshift(</span>'Ron', 'Herman'<span class="imp">)</span>;</pre>
+<pre contenteditable>heroes<span class="imp">.unshift(</span>'Desi', 'Nola'<span class="imp">)</span>;</pre>
 <p>Adding in the middle (based on index)</p>
 <pre contenteditable>
-nincompoops.splice(2,0,'Dick', 'George');
+heroes.splice(2,0,'Sarah', 'Adele');
 </pre>
 <small>Note: 0 is # to delete</small>
 </section>
@@ -92,15 +105,15 @@ nincompoops.splice(2,0,'Dick', 'George');
 <section class="content">
 <p>Delete last item</p> 
 <pre contenteditable>
-var lastItem = nincompoops.pop();
+var lastItem = heroes.pop();
 </pre>
 <p>Delete first item</p> 
 <pre contenteditable>
-var firstItem = nincompoops.shift();
+var firstItem = heroes.shift();
 </pre>
 <p>Delete based on index</p>
 <pre contenteditable>
-var deletedItem = nincompoops.splice(2,1);
+var deletedItem = heroes.splice(2,1);
 </pre>
 </section>
 </div> 
@@ -123,7 +136,28 @@ var deletedItem = nincompoops.splice(2,1);
 </section>
 </div> 
 
-
+<div class="slide normal"> 
+     <header><h1>Heroes Cheatsheet</h1></header> 
+     <section class="content">
+     <ul class="explain">
+   <li>Anita Borg</li>
+	<li> Grace Hopper</li>
+	<li> Barbara Liskov, Fran Allen (Turing Award winners) </li>
+	<li> Emmy Noether (nobel prize in Math, tutored Einstein)</li>
+	<li> Adele Goldberg (one of the developers of SmallTalk)</li>
+	<li> Ada Lovelace</li>
+	<li> Marie Curie</li>
+	<li> Hedy Lamar (holds a patent wireless networking feature 
+    proposed for encoding messages during WWII)</li>
+	<li> Valerie Aurora (Linux kernel hacker)</li>
+	<li> Kimberly Bryant (Black Girls Code)</li>
+	<li> Desi Macadam, Nola Stowe (DevChix) </li>
+    <li> Sarah Allen (Came up with this list)</li>
+    </ul>
+     </section>
+ </div>
+ 
+ 
 <div class="slide intro"> 
 <header><h1>Next</h1></header> 
 <section class="content">

@@ -3,7 +3,7 @@
 
 body {
   font-size: 20px;
-  font-family: 'Droid Sans', sans-serif;
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
   padding: 0;
   margin: 0;
   width: 100%;
@@ -262,3 +262,8 @@ p + pre{margin-top: -1em; } pre+small {margin-top: -0.8em; display:block;  opaci
 code {background-color: #dedede;}
 .half {opacity: 0.5;}
 .explain {font-family:Georgia, "Times New Roman", Times, serif; font-style: italic; color: #999;}
+
+dt {background-color:#ddd; margin-top: 10px;}
+dl.halved dt {display:inline-block; padding: 3px 5px; border-radius: 3px; border: 1px solid rgba(0,0,0,0.2);}
+dd {display: none;}
+dt:hover + dd {display:inherit;}

@@ -155,48 +155,61 @@ array.splice();</pre>
 <section class="content">
 
 <h1>Functions</h1>
-<p class="explain" style="margin:0;">Reusable code that does something!</p> 
-<p>Syntax:</p>
-<pre contenteditable>function functionName(param1, param2) {}
-functionName = function(param1, param2) {}</pre>
 
+<p>Function declaration</p>
 <pre>function alertName(first, last) {
     alert("Your name is " + first + " " + last);
 }</pre>
-
+<p>Function Expression</p>
 <pre contenteditable>alertName = function(){
     alert("Your name is " + first + " " + last);
 }</pre>
 <p>Function call</p>
 <pre contenteditable>alertName('Estelle', 'Weyl');</pre>
-
+<p class="explain">functions are objects that can execute a set of statements</p>
 
 </section>
 </div> 
+
+<div class="slide normal"> 
+     <header><h1>Functions are reusable</h1></header>
+<p class="explain" style="margin:0;">Reusable code that does something!</p>    
+ <section class="content">
+ <p>Function</p>
+ <pre contenteditable>yummy = function(){
+  for(var <strong>i = 0</strong>; i < <strong>arguments.length</strong>; i++){
+	console.log("I love to eat " + <strong>arguments[i]</strong>)
+  }
+}</pre>
+<p>Function calls</p>
+<pre contenteditable>
+yummy("chocolate", 
+      "ice cream", 
+      "raspberries", 
+      "pineapple");
+yummy(prompt('name a yummy food'));</pre> 
+     </section>
+ </div>
+
+
   
  
-<div class="slide normal"> 
-<header>
-<h1>Functions</h1>
-<h2>Reusable code that does something!</h2>
-</header> 
-<section class="content"> 
-<pre contenteditable>//declare variables
-var val1, val2, total;
+<div class="slide normal">  
+<section class="content"> <p style="font-size: 0.8em">//declare variables</p>
+<pre contenteditable>var val1, val2, total;
 val1 = prompt('Enter a number'); 
-val2 = prompt('Another number');
-
-//call function and assign the return
-total = <strong>multiplier(</strong>val1, val2<strong>)</strong>;
-
-// the function
-<strong>function multiplier(</strong>num1, num2<strong>)</strong>{
+val2 = prompt('Another number');</pre>
+<p style="font-size: 0.8em">// the function</p>
+<pre contenteditable>
+<strong>var multiplier = function (</strong>num1, num2<strong>)</strong>{
     var value =  num1 * num2;
     console.log(num1 + " X " + num2 + " = " + value);
-    <strong>return</strong> value;
-}
-
-// local v global scope?
+    <strong>return</strong> value; }</pre>
+<p style="font-size: 0.8em">//call function and assign the return</p>
+<pre contenteditable>total = <strong>multiplier(</strong>val1, val2<strong>)</strong>;
+</pre>
+<p style="font-size: 0.8em">// but what about scope??? local v global scope?</p>
+<pre contenteditable>
 //console.log(num1 + " X " + num2 + " = " + value);
   console.log(val1 + " X " + val2 + " = " + total);
   </pre>
@@ -205,34 +218,29 @@ total = <strong>multiplier(</strong>val1, val2<strong>)</strong>;
  
  <div class="slide normal"> 
 <header><h1>Variable Scope</h1></header> 
-<section class="content">
+<section class="content explain">
 <p>Variables defined outside a function are global variables. They are accessible anywhere in your program once declared.</p>
 <p>Variables declared with var inside a function are local to that function.</p>
 <p>Variables defined in a function without being locally declared are global. Arguments are always local whether implicit or explicit.</p>
-<pre contenteditable>function kiss(){
-  for(var <strong>i = 0</strong>; i < <strong>arguments.length</strong>; i++){
-	console.log("I want to kiss " + <strong>arguments[i]</strong>)
-  }
-}
-kiss("Bill", "Barack", "Johnny", "Angelina");</pre>
+
 </section>
 </div> 
  
   
 <div class="slide normal"> 
-<header><h1>Global Scope</h1></header> 
+<header><h1>Global v Local Scope</h1></header> 
 <section class="content"> 
-<pre contenteditable>var vacationDays = 14;
-// vacationDays = global variable
-var holiday= function(vacationDays) {
-    var name = prompt('Name');
-    console.log(name + "'s trip lasted " + vacationDays + " days")
+<pre contenteditable>var vDays = 14; <strong>// global variable</strong>
+
+var holiday= function(vDays) { <strong>// local scope</strong>
+ var name = prompt('Name');
+ console.log(name+"'s trip lasted "+vDays+" days");
 }
 
-// vacationdays = 7 here is a local variable to the function
+// vDays = 7 here is a local variable to the function
 holiday(7);
 // see, vacationdays is still 14 days
-console.log(vacationDays);
+console.log(vDays);
 //console.log(name);</pre>
 </section>
 </div> 
@@ -242,7 +250,7 @@ console.log(vacationDays);
  
  
 <div class="slide normal advanced"> 
-<header><h1>Functions are methods</h1></header> 
+<header><h1>Methods are Functions</h1></header> 
 <section class="content"> 
 <pre contenteditable>var functionName = function () {
   // do something
@@ -265,7 +273,7 @@ answers.annoy();</pre>
 <div class="slide normal"> 
 <header><h1>Return Values</h1></header> 
 <section class="content">
-<p>"return" is used inside a function to send back the return value when a function is called.</p> 
+<p class="explain">"return" is used inside a function to send back the return value when a function is called.</p> 
 <pre contenteditable>var squared = function(x){
 	<strong>return x * x;</strong>
 }
@@ -290,7 +298,8 @@ console.log(num + " squared is " + <strong>squared(num)</strong>);
 }
 var num = +prompt('Enter a number');
 console.log(num + " squared is " + <strong>squared(num)</strong>);
-</pre></section>
+</pre>
+<p class="explain">All functions have a return value. If no return is included, the function call returns <code>undefined</code></p></section>
 </div> 
 
 
@@ -314,7 +323,7 @@ console.log(num + " squared is " + <strong>squared(num)</strong>);
 }
 
 var message = ageLimit(+prompt("How old are you?"));
-</pre><small>could have also used else if</small>
+</pre><small>could have also used else/if</small>
 </section>
 </div> 
  

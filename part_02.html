@@ -216,6 +216,63 @@ var deletedItem = heroes.splice(2,1);
  </div>
  
  
+ 
+ 
+<div class="slide normal"> 
+<header><h1>Objects</h1></header> 
+<section class="content"> 
+<ul>
+<li>Everything outside of primitive types are objects</li>
+
+<li>Objects are mutable</li>
+
+<li>Objects are a container of properties (key/value pairs)</li>
+</ul>
+     </section>
+ </div>
+ 
+ 
+ 
+ 
+<div class="slide normal"> 
+     <header><h1>Objects</h1></header> 
+     <section class="content">
+<p>Creating objects with object literal syntax.</p>
+<pre contenteditable>var class = {
+    teacher: "Estelle",
+    subject: "JavaScript",
+    hours: 6
+};</pre>
+
+<p>Accessing/setting Object properties.</p>
+<pre contenteditable>class.teacher = "Estelle"
+class[subject] = "JavaScript"
+class.hours = 6</pre>
+</section>
+</div> 
+ 
+<div class="slide normal"> 
+<header><h1><code>document</code> and <code>window</code></h1></header> 
+<section class="content">
+<p>When setting variables in global scope, they will be set on the window object</p>
+<pre contenteditable>var cat = "Sassafrass";
+console.log(cat);
+console.log(window.cat);
+</pre>
+<p>When retrieving DOM nodes from a web page, you will be accessing document objects</p>
+ <p>Find a node, then access the objects properties</p>
+<pre contenteditable>var counter = document.getElementById('presentation-counter');
+console.log(counter.innerHTML);
+console.log(counter.nextElementSibling);
+console.log(counter.offsetTop);</pre>
+</section>
+</div> 
+ 
+  
+  
+ 
+ 
+ 
 <div class="slide intro"> 
 <header><h1>Next</h1></header> 
 <section class="content">
